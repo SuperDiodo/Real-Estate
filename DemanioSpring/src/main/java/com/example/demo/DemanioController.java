@@ -20,6 +20,7 @@ import filters.GT;
 import filters.IN;
 import filters.LT;
 import filters.NOT;
+import filters.ORAND;
 
 @Controller
 public class DemanioController {
@@ -113,7 +114,14 @@ public class DemanioController {
 			IN nin = new IN(filtro.getString("fields"), filtro.getJSONArray("value"));
 			vett = nin.applica(demanio.getConcessioni(), true);
 			break;
-
+		case "or":
+			ORAND or = new ORAND(filtro.getString("fields"), filtro.getJSONArray("cities"));
+			vett = or.applica(demanio.getConcessioni(), true);
+			break;
+		case "and":
+			ORAND and = new ORAND(filtro.getString("fields"), filtro.getJSONArray("cities"));
+			vett = and.applica(demanio.getConcessioni(), false);
+			break;
 		default:
 			return new ResponseEntity<String>("Nessun filtro selezionato/esistente", HttpStatus.NOT_IMPLEMENTED);
 		}
