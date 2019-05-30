@@ -2,10 +2,10 @@ package filters;
 
 /* GET 1) http://localhost:8080/house/filtering?filter={"type":"gt", "fields":"prezzo", "lower":500000} 
    GET 2) http://localhost:8080/house/show.html */
-import com.example.demo.*;
+//import com.example.demo.*;
 import java.util.Vector;
-
 import org.json.JSONException;
+import Dati.Concessione;
 /**
  * 
  * @author Gruppo Real Estate

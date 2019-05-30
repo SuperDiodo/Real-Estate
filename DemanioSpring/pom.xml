@@ -19,6 +19,12 @@
 	</properties>
 
 	<dependencies>
+	 <!-- commons lang per String Utils -->
+	<dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-lang3</artifactId>
+  <version>3.9</version>
+</dependency>
 	        <!-- web mvc -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

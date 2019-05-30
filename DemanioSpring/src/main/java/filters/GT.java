@@ -2,7 +2,7 @@ package filters;
 
 import java.util.Vector;
 
-import com.example.demo.Concessione;
+import Dati.Concessione;
 /**
  * 
  * @author Gruppo Real Estate

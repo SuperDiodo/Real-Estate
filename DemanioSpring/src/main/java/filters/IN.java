@@ -1,11 +1,11 @@
 package filters;
 
 import java.util.Vector;
-
+import Dati.Concessione;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.example.demo.Concessione;
+
 /**
  * 
  * @author Gruppo Real Estate
