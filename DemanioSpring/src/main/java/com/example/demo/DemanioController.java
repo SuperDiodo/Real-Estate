@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.util.Vector;
 import Dati.Concessione;
 import Dati.Demanio;
-import Dati.metadata;
 import Dati.Server;
+import Dati.metadata;
 import filters.BT;
 import filters.GT;
 import filters.IN;
@@ -43,6 +43,13 @@ public class DemanioController {
 	@GetMapping("/metadata")
 	public ResponseEntity meta() {
 		return new ResponseEntity<Vector<metadata>>(Concessione.metadati(), HttpStatus.OK);
+	}
+	
+	@GetMapping("/demanio/show.html")
+	public String table(Model model) {
+		
+		model.addAttribute("list", vett);
+		return "site";
 	}
 /**
  * 

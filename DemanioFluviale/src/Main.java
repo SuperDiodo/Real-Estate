@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import Dati.Concessione;
+import Dati.Server;
 
 public class Main {
 	

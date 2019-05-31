@@ -30,16 +30,35 @@ public class Converter {
 		BufferedReader reader = new BufferedReader(flow);
 		String line = reader.readLine(); 
 		Concessione temp;
+		
+		int riga = 0;
+		
+		boolean tenere;
 		while((line = reader.readLine()) != null) {
+			
+			riga++;
+			
 			String[] sections = line.split(Pattern.quote(";"));
 		
-			if(sections.length == 9 && !StringUtils.isAlpha(sections[8])) {
+			tenere = true;
+			
+			if(sections.length == 9) {
+			if(!StringUtils.isAlpha(sections[8]) && StringUtils.isAlpha(sections[3])) tenere = false; //IDCom e Durata no alfanumerici
+			if(sections[3].isEmpty() || sections[3].length() != 4) tenere = false; //no IDCom
+			if(sections[2].isEmpty() && (sections[0].isEmpty() || sections[1].isEmpty()) ) tenere = false; //serve almeno ragione sociale o nome e cognome
+			if(ParseInt(sections[6], 0) == 0 && ParseInt(sections[7], 0) == 0 && ParseDurata(sections[8]) == 0) tenere = false; //non vogliamo gli ultimi tre parametri nulli
+			
+			if(tenere) {
 				temp = new Concessione(sections[0],sections[1],sections[2],sections[3],sections[4], sections[5], ParseInt(sections[6], 0), ParseInt(sections[7], 0), ParseDurata(sections[8]));
 				vettore.add(temp);
+				}
+			else System.out.println("La riga " + riga + " del file CSV per elemento mancante");
 			}
+			
+			else System.out.println("La riga " + riga + " del file CSV per incompletezza");
 		}
 	reader.close();
-	return Correggi(Clean(vettore));
+	return Correggi(vettore);
 	}
 	
 	/**
@@ -66,25 +85,6 @@ public class Converter {
 		if(str.contains("mesi")) return ParseInt(str,0)*30;
 		if(str.contains("giorni")) return ParseInt(str,0);
 		return ParseInt(str,0)*365;
-	}
-	
-	/**
-	 * Elimina dal Vector tutti gli elementi non consoni
-	 * @param vett
-	 * @return vector pulito
-	 */
-	public Vector<Concessione> Clean(Vector<Concessione> vett){
-	
-		boolean eliminare = false;
-		
-		for(int i = 0; i < vett.size(); i++) {	
-			if((vett.get(i).getNome().isEmpty() || vett.get(i).getCognome().isEmpty()) && vett.get(i).getRagSoc().isEmpty()) eliminare=true;
-			if(vett.get(i).getSuperficie() == 0 && vett.get(i).getSuperficie() == 0 && vett.get(i).getDurata()==0) eliminare = true;
-			if(vett.get(i).getComune().isEmpty() || vett.get(i).getIDCom().isEmpty()) eliminare = true;
-			if(eliminare) {vett.remove(i); eliminare = false;}
-			}
-		
-		return vett;
 	}
 	
 	/**
