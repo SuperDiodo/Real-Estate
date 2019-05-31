@@ -2,6 +2,7 @@ package stats;
 
 import java.util.Vector;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import Dati.Concessione;
@@ -16,7 +17,7 @@ public abstract class statistiche {
 		setVett(vett); setField(field);
 	}
 	
-	public abstract JSONObject getJsonStat();
+	public abstract JSONObject getJsonStat() throws JSONException;
 	
 	public String getField() {
 		return field;
