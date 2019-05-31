@@ -46,9 +46,13 @@ public class DemanioController {
 		return new ResponseEntity<Vector<metadata>>(Concessione.metadati(), HttpStatus.OK);
 	}
 	
-	@GetMapping("/demanio/show.html")
+	/**
+	 * Permette di mostrare l'attuale database, filtrato o non, tramite HTML
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/show.html")
 	public String table(Model model) {
-		
 		model.addAttribute("list", vett);
 		return "site";
 	}
@@ -63,7 +67,6 @@ public class DemanioController {
 	public ResponseEntity dati() throws IOException, JSONException {
 		vett = data.getDemanio().getConcessioni();
 		return new ResponseEntity<Vector<Concessione>>(vett, HttpStatus.OK);
-
 	}
 
 	/**
@@ -133,9 +136,10 @@ public class DemanioController {
 			return new ResponseEntity<String>("Nessun filtro selezionato/esistente", HttpStatus.NOT_IMPLEMENTED);
 		}
 
-		if (vett.size() != 0)
-			return new ResponseEntity<Vector<Concessione>>(vett, HttpStatus.OK);
-		return new ResponseEntity<String>("Non ci sono stati risultati della ricerca", HttpStatus.NO_CONTENT);
+		if (vett.size() != 0) return new ResponseEntity<String>("Non ci sono stati risultati della ricerca", HttpStatus.NO_CONTENT);
+		
+		return new ResponseEntity<Vector<Concessione>>(vett, HttpStatus.OK);
+		
 	}
 
 }
