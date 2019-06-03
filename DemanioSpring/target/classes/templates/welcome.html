@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html id="demo" style = "font-family:Impact;" class="parallax">
+<meta charset="UTF-8">
+
+<head>
+<style>
+
+hr {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.parallax { 
+  /* The image used */
+  background-image: url(https://images.wallpaperscraft.com/image/paint_colorful_overlay_139992_1920x1080.jpg);
+
+  /* Set a specific height */
+  height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+table.darkTable {
+  font-family: Trebuchet MS;
+  border: 2px solid #000000;
+  background-color: #4A4A4A;
+  width: 75%;
+  height: 200px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.darkTable td, table.darkTable th {
+  border: 1px solid #4A4A4A;
+  padding: 3px 2px;
+}
+table.darkTable tbody td {
+  font-size: 13px;
+  color: #E6E6E6;
+}
+table.darkTable tr:nth-child(even) {
+  background: #888888;
+}
+table.darkTable thead {
+  background: #000000;
+  border-bottom: 3px solid #000000;
+}
+table.darkTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #E6E6E6;
+  text-align: center;
+  border-left: 2px solid #4A4A4A;
+}
+table.darkTable thead th:first-child {
+  border-left: none;
+}
+
+table.darkTable tfoot td {
+  font-size: 12px;
+}
+
+</style>
+</head>
+
+<h1>Fluvial-Deals, Welcome!
+<span style="color: #ffffff; font-size: medium; padding-left: 920px;">Alessio Saccuti, Lorenzo Del Rossi</span></h1>
+<hr >
+
+<table class="darkTable" align="center">
+<thead>
+<tr>
+<th>Chiamata</th>
+<th>Parametri</th>
+<th>Funzione</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td th:text="'/'" > Chiamata </td>
+<td th:text="'none'" > Parametri </td>
+<td th:text="'mostra la pagina attuale'" > Funzione </td>
+</tr>
+
+<tr>
+<td th:text="'/data'" > Chiamata </td>
+<td th:text="'none'" > Parametri </td>
+<td th:text="'mostra la collezione intera di dati'" > Funzione </td>
+</tr>
+
+<tr>
+<td th:text="'/metadata'" > Chiamata </td>
+<td th:text="'none'" > Parametri </td>
+<td th:text="'mostra i metadati utilizzati'" > Funzione </td>
+</tr>
+
+<tr>
+<td th:text="'/filtering'" > Chiamata </td>
+<td th:text="'filtro in forma JSON'" > Parametri </td>
+<td th:text="'mostra una selezione della collezione di dati'" > Funzione </td>
+
+</tr>
+
+<tr>
+<td th:text="'/stats'" > Chiamata </td>
+<td th:text="'Attributo, opzionalmente un filtro'" > Parametri </td>
+<td th:text="'mostra le statistiche di un attributo della collezione intera o di una selezione'" > Funzione </td>
+</tr>
+
+<tr>
+<td th:text="'/show.html'" > Chiamata </td>
+<td th:text="'none'" > Parametri </td>
+<td th:text="'mostra la collezione attuale in formato JSON (dopo filtering sarà una selezione)'" > Funzione </td>
+</tr>
+</tbody>
+</table>
+
+
+</html>

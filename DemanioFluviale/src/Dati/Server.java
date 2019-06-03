@@ -1,14 +1,17 @@
 package Dati;
+
 import java.io.IOException;
-
 import java.net.URL;
-
 import org.json.JSONException;
-
-import Dati.*;
 import InputOutput.Converter;
 import InputOutput.Downloader;
 
+/**
+ * Collegamento tra i due progetti, dato l'url permette la costruzione
+ * del demanio
+ * @author 
+ *
+ */
 public class Server {
 	
 	private Downloader down;

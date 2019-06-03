@@ -1,6 +1,9 @@
 package stats;
-import java.util.Vector;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Vector;
+import org.json.JSONException;
 import Dati.Concessione;
 
 
@@ -98,37 +101,28 @@ import Dati.Concessione;
 			return vett.size();
 		} 
 		
-
-
-		/* public static Vector<String> exclusive(Vector<Concessione> vett, String field) {
-			Vector<String> array = convstr(vett, field);
-			 Vector<String> unici = new Vector<String>();
-			boolean[] flag = new boolean[array.size()];
-			for (int i = 0; i < array.size(); i++) {
-				if (!flag[i]) {
-					int count = 1;
-					for (int j = i + 1; j < array.size(); j++) {
-						if (array.get(j) == array.get(i)) {
-							count++;
-							flag[j] = true;
+		public static Map<String, Object> occorrence(Vector<Concessione> vett, String field) throws JSONException {
+			
+			Vector<String> vett_c = convstr(vett, field);
+			Map<String, Object> map = new HashMap<String, Object>();
+			
+			int occ = 0; String str = null;
+			Vector<String> temp = new Vector<String>();
+			temp.addAll(vett_c);
+			
+			for(int i = 0; i < vett.size(); i++) {
+				
+			occ = 0;
+				
+			for(int j = 0; j < temp.size(); j++) {
+					if(temp.get(j).equals(vett_c.get(i)) && !vett_c.get(i).isEmpty()) {
+						occ++; 
+						str = temp.get(j);
+						temp.removeElementAt(j); j--;
+						map.put(str, occ);
 						}
-					}
-					if (count == 1) {
-						unici.add(array.get(i));
-					}
 				}
 			}
-			return unici;
-		} */
-		 
-			/*public static intstats creastats(Vector<Concessione> vett, String field) {
-				return new intstats(field,Op.avg(vett, field),Op.minimum(vett, field),Op.maximum(vett, field),Op.devstd(vett, field),Op.sum(vett, field),Op.count(vett));
-				
-			}
-		 public Vector<stringstats> creastatstr(Vector<Concessione> vett, String field) {
-
-		 }
-*/
+		return map;
+		}
 	}
-
-

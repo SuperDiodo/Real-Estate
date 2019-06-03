@@ -1,28 +1,41 @@
 package stats;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
-
 import org.json.JSONException;
-import org.json.JSONObject;
-
 import Dati.Concessione;
 
-public class IntegerStat extends statistiche{
+/**
+ * Genera le statistiche per tipo numerico:
+ * 1) sommatoria
+ * 2) minimo
+ * 3) massimo
+ * 4) media
+ * 5) deviazione standard
+ * 
+ * La collezione risultato è del tipo:
+ * Hash map <tipologia stat, valore>
+ *
+ */
+public class IntegerStat{
 
-	public IntegerStat(Vector<Concessione> vett, String field) {
-		super(vett, field);
+	private Stats x;
+
+	public IntegerStat(Vector<Concessione> vett, String field) throws JSONException {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("Sommatoria", Op.sum(vett, field));
+		map.put("Minimo", Op.minimum(vett, field));
+		map.put("Massimo", Op.maximum(vett, field));
+		map.put("Media", Op.avg(vett, field));
+		map.put("Deviazione STD", Op.devstd(vett, field));
+	
+		x = new Stats(map, true);
 	}
-
-	@Override
-	public JSONObject getJsonStat() throws JSONException {
-		
-		JSONObject obj = new JSONObject();
-		obj.put("sum", Op.sum(getVett(), getField()));
-		obj.put("avg", Op.avg(getVett(), getField()));
-		obj.put("min", Op.minimum(getVett(), getField()));
-		obj.put("max", Op.maximum(getVett(), getField()));
-		
-		return obj;
+	
+	public Stats getStat() {
+		return x;
 	}
 
 }

@@ -65,7 +65,7 @@ public class GT extends Filter {
 					approvato = false;
 			}
 			break;
-		default:
+		default: approvato = false;
 			break;
 		}
 
@@ -82,8 +82,9 @@ public class GT extends Filter {
 	public Vector<Concessione> applica(Vector<Concessione> list, boolean equal) {
 		Vector<Concessione> trovati = new Vector<Concessione>();
 		for (int i = 0; i < list.size(); i++) {
-			if (approved(list.get(i), equal))
+			if (approved(list.get(i), equal)) {
 				trovati.add(list.get(i));
+			}
 		}
 
 		return trovati;

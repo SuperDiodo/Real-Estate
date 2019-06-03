@@ -3,24 +3,28 @@ package stats;
 import java.util.Vector;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import Dati.Concessione;
 
-public class StringStat extends statistiche{
+/**
+ * Genera le statistiche per tipo stringa:
+ * 1) mostra quante volte si ripete ogni elemento di un campo
+ * 
+ * La collezione risultato è del tipo:
+ * Hash map <elento, occorrenze>
+ *
+ */
+public class StringStat {
+	
+	private Stats x;
 
-	public StringStat(Vector<Concessione> vett, String field) {
-		super(vett, field);
+	public StringStat(Vector<Concessione> vett, String field) throws JSONException {
+		x = new Stats(Op.occorrence(vett, field), false);
+	}
+	
+	public Stats getStat() {
+		return x;
 	}
 
-	@Override
-	public JSONObject getJsonStat() throws JSONException {
-		
-		JSONObject obj = new JSONObject();
-
-		/* aggiungi stats */
-		
-		return obj;
-	}
 
 }
