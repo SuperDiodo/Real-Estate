@@ -130,7 +130,9 @@ public class Concessione{
 		metadata idcommeta = new metadata("IDCom","ID_Comune","String");
 		Meta.add(idcommeta);
 		metadata comunemeta = new metadata("comune", "Comune del bene oggetto di Concessione", "String");
-		Meta.add(comunemeta);	
+		Meta.add(comunemeta);
+		metadata denmeta = new metadata("den", "Denominazione_Luogo", "String");
+		Meta.add(denmeta);
 		metadata supmeta = new metadata("superficie", "superficie", "Integer");
 		Meta.add(supmeta);
 		metadata supwmeta = new metadata("supwater", "superficie specchio acqua", "Integer");
