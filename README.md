@@ -14,8 +14,8 @@ Sono presenti in repository tre cartelle:
 ## Jars utilizzati
 - [Jsoup](https://jsoup.org/)
 - [Apache common I/O](https://commons.apache.org/proper/commons-io/) 
-- [Apache common lang] (https://commons.apache.org/proper/commons-lang/)
-	 - Json: [https://mvnrepository.com/artifact/org.json/json](https://mvnrepository.com/artifact/org.json/json)
+- [Apache common lang](https://commons.apache.org/proper/commons-lang/)
+- [Json](https://mvnrepository.com/artifact/org.json/json)
 
 ## Come eseguire il Run
 
@@ -33,7 +33,7 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
  - UML2
  - UML3
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODgwMzg3ODQsODMwNDY1Njk3LDMxMz
-k1MjE0NSwtMTgxNzY1NTU4OSwtMTYwMjM3NzE4Nyw5MzkzNzMy
-NDIsMTkyNTcxMzM4Ml19
+eyJoaXN0b3J5IjpbMTAyNTM1NzczNCw4MzA0NjU2OTcsMzEzOT
+UyMTQ1LC0xODE3NjU1NTg5LC0xNjAyMzc3MTg3LDkzOTM3MzI0
+MiwxOTI1NzEzMzgyXX0=
 -->
