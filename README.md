@@ -33,9 +33,9 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 Per diagrammi UML più dettagliati si può fare riferimenti ai file SVG seguenti:
 
--[Diagramma ]
+-[Diagramma delle classi]
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQzMTQ3NjQ3LDEwMjUzNTc3MzQsODMwND
-Y1Njk3LDMxMzk1MjE0NSwtMTgxNzY1NTU4OSwtMTYwMjM3NzE4
-Nyw5MzkzNzMyNDIsMTkyNTcxMzM4Ml19
+eyJoaXN0b3J5IjpbLTkzODE2ODE4MCwxMDI1MzU3NzM0LDgzMD
+Q2NTY5NywzMTM5NTIxNDUsLTE4MTc2NTU1ODksLTE2MDIzNzcx
+ODcsOTM5MzczMjQyLDE5MjU3MTMzODJdfQ==
 -->
