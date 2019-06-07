@@ -28,13 +28,12 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 ## Funzionamento
 
-```
-![Image](ClassDiagramSG.svg)
 
  - UML1
  - UML2
  - UML3
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEzOTUyMTQ1LC0xODE3NjU1NTg5LC0xNj
-AyMzc3MTg3LDkzOTM3MzI0MiwxOTI1NzEzMzgyXX0=
+eyJoaXN0b3J5IjpbODMwNDY1Njk3LDMxMzk1MjE0NSwtMTgxNz
+Y1NTU4OSwtMTYwMjM3NzE4Nyw5MzkzNzMyNDIsMTkyNTcxMzM4
+Ml19
 -->
