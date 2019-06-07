@@ -28,6 +28,14 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 ## Funzionamento
 
+ ```
+![Alt text](https://raw.github.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg?sanitize=true)
+<img src="[https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg)?sanitize=true">
+```
+
  - UML1
  - UML2
  - UML3
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTY0ODA3MTk0OF19
+-->
