@@ -30,6 +30,8 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 ```
 <img src="[https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg)?sanitize=true">
+
+<img src="https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg?sanitize=true">
 ```
 
 
