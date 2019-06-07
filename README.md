@@ -29,9 +29,10 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 ## Funzionamento
 
 ```
-<img src="[https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg)?sanitize=true">
+/ClassDiagram.svg">
 
-<img src="https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg?sanitize=true">
+<img src="https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs![Alt text](./controllers_brief.svg)
+<img src="./ClassDiagramSG.svg?sanitize=true">
 ```
 
 
@@ -39,6 +40,6 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
  - UML2
  - UML3
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDIzNzcxODcsOTM5MzczMjQyLDE5Mj
-U3MTMzODJdfQ==
+eyJoaXN0b3J5IjpbMTAyMTUxMDk3NiwtMTYwMjM3NzE4Nyw5Mz
+kzNzMyNDIsMTkyNTcxMzM4Ml19
 -->
