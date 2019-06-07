@@ -30,8 +30,12 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/UseCase.JPG)
 
 ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/Class.JPG)
+
+Per diagrammi UML più dettagliati si può fare riferimenti ai file SVG seguenti:
+
+-[Diagramma ]
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzY3NzU4MzQsMTAyNTM1NzczNCw4Mz
-A0NjU2OTcsMzEzOTUyMTQ1LC0xODE3NjU1NTg5LC0xNjAyMzc3
-MTg3LDkzOTM3MzI0MiwxOTI1NzEzMzgyXX0=
+eyJoaXN0b3J5IjpbMzQzMTQ3NjQ3LDEwMjUzNTc3MzQsODMwND
+Y1Njk3LDMxMzk1MjE0NSwtMTgxNzY1NTU4OSwtMTYwMjM3NzE4
+Nyw5MzkzNzMyNDIsMTkyNTcxMzM4Ml19
 -->
