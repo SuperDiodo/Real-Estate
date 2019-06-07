@@ -27,13 +27,13 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 ## Funzionamento
 
-
+![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/UseCase.JPG)
 
  - UML1
  - UML2
  - UML3
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNTM1NzczNCw4MzA0NjU2OTcsMzEzOT
-UyMTQ1LC0xODE3NjU1NTg5LC0xNjAyMzc3MTg3LDkzOTM3MzI0
-MiwxOTI1NzEzMzgyXX0=
+eyJoaXN0b3J5IjpbMTE5MzkyMTQyNSwxMDI1MzU3NzM0LDgzMD
+Q2NTY5NywzMTM5NTIxNDUsLTE4MTc2NTU1ODksLTE2MDIzNzcx
+ODcsOTM5MzczMjQyLDE5MjU3MTMzODJdfQ==
 -->
