@@ -33,8 +33,8 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 Per diagrammi UML più dettagliati si può fare riferimenti ai file SVG seguenti:
 - [Diagramma delle classi con Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg)
-[Diagramma delle classi senza Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramNOSG.svg)
-[Diagramma delle classi semplificato](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagram.svg)
+- [Diagramma delle classi senza Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramNOSG.svg)
+- [Diagramma delle classi semplificato](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagram.svg)
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTIwNDEzNzUwMiwyNjE3MTY1MzksMTYxMz
