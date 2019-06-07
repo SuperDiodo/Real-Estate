@@ -28,12 +28,14 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 ## Funzionamento
 
-
+```
+img src="[https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg)"
+```
 
 
  - UML1
  - UML2
  - UML3
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NTIwNzM1NV19
+eyJoaXN0b3J5IjpbMTkyNTcxMzM4Ml19
 -->
