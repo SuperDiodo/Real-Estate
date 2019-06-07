@@ -12,6 +12,7 @@ Sono presenti in repository tre cartelle:
  3. **External Files**: contiene i Jars delle librerie utilizzate.
 
 ## Jars utilizzati
+[Stack Overflow](http://stackoverflow.com)
 
 	 - Jsoup: [https://jsoup.org/](https://jsoup.org/)
 	 - Apache common I/O: [https://commons.apache.org/proper/commons-io/](https://commons.apache.org/proper/commons-io/)
@@ -34,7 +35,7 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
  - UML2
  - UML3
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk4OTEzNDU5LDgzMDQ2NTY5NywzMTM5NT
-IxNDUsLTE4MTc2NTU1ODksLTE2MDIzNzcxODcsOTM5MzczMjQy
-LDE5MjU3MTMzODJdfQ==
+eyJoaXN0b3J5IjpbMTA2ODczNzUwNyw4MzA0NjU2OTcsMzEzOT
+UyMTQ1LC0xODE3NjU1NTg5LC0xNjAyMzc3MTg3LDkzOTM3MzI0
+MiwxOTI1NzEzMzgyXX0=
 -->
