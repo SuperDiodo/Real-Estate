@@ -4,7 +4,6 @@ import java.util.Vector;
 
 /**
  * 
- * @author Gruppo Real Estate
  *Classe che implementa il filtro condizionale "bt".
  */
 public class BT extends Filter {

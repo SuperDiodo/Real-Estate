@@ -4,7 +4,6 @@ import java.util.Vector;
 import Dati.Concessione;
 /**
  * 
- * @author Gruppo Real Estate
  *Classe che implementa il filtro logico "not".
  */
 public class NOT extends Filter{

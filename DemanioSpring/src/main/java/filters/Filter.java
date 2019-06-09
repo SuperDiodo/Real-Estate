@@ -8,7 +8,6 @@ import org.json.JSONException;
 import Dati.Concessione;
 /**
  * 
- * @author Gruppo Real Estate
  * Classe astratta creata per includere i filtri logici e condizionali da implementare. I filtri dovranno di conseguenza implementare i metodi approved e applica.
  *
  */

@@ -15,7 +15,7 @@ import Dati.Concessione;
  * 5) deviazione standard
  * 
  * La collezione risultato è del tipo:
- * Hash map <tipologia stat, valore>
+ * Hash map tipologia stat, valore
  *
  */
 public class IntegerStat{

@@ -13,7 +13,7 @@ import org.jsoup.nodes.Document;
 
 
 /**
- * Con questa classe si può ricercare un url e scaricarne il contenuto
+ * Downloader del file CSV da dataset JSON
  * 
  */
 
@@ -23,11 +23,6 @@ public class Downloader {
 	private URL url;
 	private String file_url;
 	
-	/**
-	 * 
-	 * @param url link che contiene il file
-	 * @param ext estensione del file
-	 */
 	
 	public Downloader(URL url, String ext) {
 		setUrl(url); setExt(ext);
@@ -55,8 +50,8 @@ public class Downloader {
 	}
 	
 	/**
-	 * converte, se necessario, l'url immesso in un file csv
-	 * @param filename
+	 * converte, se necessario, l'url immesso in un file csv. Controlla se il file è già esistente.
+	 * @param filename nome file da creare
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 * @throws JSONException

@@ -11,7 +11,7 @@ import Dati.Concessione;
  * 1) mostra quante volte si ripete ogni elemento di un campo
  * 
  * La collezione risultato è del tipo:
- * Hash map <elento, occorrenze>
+ * Hash map  elemento, occorrenze
  *
  */
 public class StringStat {

@@ -5,7 +5,6 @@ import Dati.Concessione;
 
 /**
  * 
- * @author Gruppo Real Estate
  *Classe che implementa i filtri condizionali "lt" e "lte".
  */
 public class LT extends Filter{

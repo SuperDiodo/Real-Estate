@@ -3,8 +3,6 @@ import java.util.Vector;
 
 
 /**
- * 
- * @author Gruppo Real Estate
  *Classe del record di un atto di concessione
  */
 public class Concessione{

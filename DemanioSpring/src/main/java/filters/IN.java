@@ -8,7 +8,6 @@ import org.json.JSONException;
 
 /**
  * 
- * @author Gruppo Real Estate
  *Classe che implementa i filtri logici "in" e "nin".
  */
 public class IN extends Filter {

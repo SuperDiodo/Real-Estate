@@ -180,12 +180,10 @@ public class DemanioController {
 	 * - "superficie","supwater","durata" [NUMERICI]
 	 * 
 	 * Di default un filtro è vuoto,immettendolo è possibile ottenere statistiche di una selezione 
-	 * della collezione, esempio di chiamata: 
+	 * della collezione
 	 * 
-	 * http://localhost:8080/stats?field=durata&filter={"type":"gt", "fields": "supwater","lower":2000}
-	 * 
-	 * @param field 
-	 * @param filter
+	 * @param field campo su cui calcolare le stats
+	 * @param filter eventuale filtro da applicare
 	 * @return  In base al tipo di risposta avremo dei risultati:
 	 * 1) OK: hash map dei risultati.
 	 * 2) NOT FOUND: stringa di errore, non sono trovate statistiche.

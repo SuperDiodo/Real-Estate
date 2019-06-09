@@ -10,6 +10,10 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Convertitore da file CSV a collezione di oggetti
+ *
+ */
 public class Converter {
 
 	private String input, output;
@@ -20,7 +24,7 @@ public class Converter {
 	
 	/**
 	 * Converte il file csv in una serie di oggetti di tipo concessione
-	 * @return
+	 * @return vettore di concessioni
 	 * @throws IOException
 	 */
 	public Vector<Concessione> csv2objects() throws IOException {
@@ -69,9 +73,9 @@ public class Converter {
 	
 	/**
 	 * Permette di ottenere "elem" esimo numero da una stringa
-	 * @param str
-	 * @param elem
-	 * @return
+	 * @param str stringa da cui estrarre il numero
+	 * @param elem se ci sono più numeri identifica quale prendere
+	 * @return numero parsato
 	 */
 	
 	public int ParseInt(String str, int elem) {
@@ -82,8 +86,8 @@ public class Converter {
 	
 	/**
 	 * Calcola la durata della concessione tenendo conto di anni, mesi, giorni
-	 * @param str
-	 * @return
+	 * @param str estrae la durata in base alla presenza di parole specifiche
+	 * @return durata calcolata in giorni
 	 */
 	public int ParseDurata(String str) {
 		str = str.toLowerCase();
@@ -95,8 +99,8 @@ public class Converter {
 	
 	/**
 	 * Nel caso manchino parametri non necessari ricostruibili questa funzione permette di ottenerli
-	 * @param vett
-	 * @return restituisce un vettore di concessioni corrette al meglio
+	 * @param vett collezione da correggere
+	 * @return restituisce un vettore di concessioni dove la RagSoc è calcolata come NOME + COGNOME
 	 */
 	public Vector<Concessione> Correggi(Vector<Concessione> vett){
 		

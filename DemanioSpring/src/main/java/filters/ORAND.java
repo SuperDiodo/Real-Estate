@@ -8,7 +8,6 @@ import org.json.JSONException;
 import Dati.Concessione;
 /**
  * 
- * @author Gruppo Real Estate
  *Classe che implementa i filtri logici "or" e "and".
  */
 public class ORAND extends Filter {

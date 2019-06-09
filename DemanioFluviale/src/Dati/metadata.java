@@ -2,7 +2,10 @@ package Dati;
 
 
 
-
+/**
+ * Classe per la rappresentazione dei matadati
+ *
+ */
 public class metadata {
 	private String alias;
 	private String sourceField;

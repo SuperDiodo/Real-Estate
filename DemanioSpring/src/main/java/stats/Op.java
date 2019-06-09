@@ -6,9 +6,18 @@ import java.util.Vector;
 import org.json.JSONException;
 import Dati.Concessione;
 
-
+	/**
+	 * Operazioni utili per il calcolo delle statistiche
+	 *
+	 */
 	public class Op {
 		
+		/**
+		 * Crea una collezione di attributi della concessione in base al field
+		 * @param vett collezione di dati da esaminare
+		 * @param field attributo desiderato
+		 * @return collezione di interi
+		 */
 		protected static Vector<Integer> conv(Vector<Concessione> vett, String field){
 			Vector<Integer> ids = new Vector<Integer>();
 			for(Concessione thing : vett)
@@ -24,6 +33,12 @@ import Dati.Concessione;
 			return ids;
 		}
 		
+		/**
+		 * Crea una collezione di attributi della concessione in base al field
+		 * @param vett collezione di dati da esaminare
+		 * @param field attributo desiderato
+		 * @return collezione di stringhe
+		 */
 		protected static Vector<String> convstr(Vector<Concessione> vett, String field){
 			Vector<String> ids = new Vector<String>();
 			for(Concessione thing : vett)
@@ -43,6 +58,12 @@ import Dati.Concessione;
 		}
 			
 
+		/**
+		 * Calcola la somma di una collezione di interi
+		 * @param vett collezione di concessione
+		 * @param field attributo su cui calcolare la statistica
+		 * @return somma (int)
+		 */
 		public static int sum(Vector<Concessione> vett, String field) {
 			int somma = 0;
 			Vector<Integer> temp = conv(vett, field);
@@ -52,11 +73,22 @@ import Dati.Concessione;
 		}
 
 		
+		/**
+		 * Calcola la media di una collezione di interi
+		 * @param vett collezione di concessione
+		 * @param field attributo su cui calcolare la statistica
+		 * @return media (double)
+		 */
 		public static double avg(Vector<Concessione> vett, String field) {
 			return sum(vett, field) / vett.size();
 		}
 
-
+		/**
+		 * Calcola il massimo di una collezione di interi
+		 * @param vett collezione di concessione
+		 * @param field attributo su cui calcolare la statistica
+		 * @return massimo (int)
+		 */
 		public static int maximum(Vector<Concessione> vett, String field) {
 			Vector<Integer> temp = conv(vett, field);
 			
@@ -71,6 +103,12 @@ import Dati.Concessione;
 			}
 		}
 
+		/**
+		 * Calcola il minimo di una collezione di interi
+		 * @param vett collezione di concessione
+		 * @param field attributo su cui calcolare la statistica
+		 * @return minimo (int)
+		 */
 		public static int minimum(Vector<Concessione> vett, String field) {
 			Vector<Integer> temp = conv(vett, field);
 			
@@ -85,6 +123,12 @@ import Dati.Concessione;
 			}
 		}
 
+		/**
+		 * Calcola la deviazione standard di una collezione di interi
+		 * @param vett collezione di concessione
+		 * @param field attributo su cui calcolare la statistica
+		 * @return dev. standard (double)
+		 */
 		public static double devstd(Vector<Concessione> vett, String field) {
 			Vector<Integer> temp = conv(vett, field);
 			double scartiquad = 0;
@@ -97,10 +141,22 @@ import Dati.Concessione;
 			return Math.sqrt(variance);
 		}
 		
+		/**
+		 * Restituisce il numero di elementi di una collezione
+		 * @return n eleme (int)
+		 */
 		public static int count(Vector<Concessione> vett) {
 			return vett.size();
 		} 
 		
+		
+		/**
+		 * Trova le occorrenze di ogni elemento di una collezione di stringhe
+		 * @param vett collezione di concessione
+		 * @param field attributo su cui calcolare la statistica
+		 * @return Hash map di tipo STRINGA, OCCORRENZA
+		 * @throws JSONException
+		 */
 		public static Map<String, Object> occorrence(Vector<Concessione> vett, String field) throws JSONException {
 			
 			Vector<String> vett_c = convstr(vett, field);

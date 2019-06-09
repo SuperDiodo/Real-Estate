@@ -5,7 +5,6 @@ import java.util.Vector;
 import Dati.Concessione;
 /**
  * 
- * @author Gruppo Real Estate
  *Classe che implementa i filtri condizionali "gt" e "gte".
  */
 public class GT extends Filter {

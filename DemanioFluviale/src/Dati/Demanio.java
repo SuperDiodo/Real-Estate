@@ -2,7 +2,6 @@ package Dati;
 import java.util.Vector;
 /**
  * 
- * @author Gruppo Real Estate
  * Questa classe raggruppa un insieme di concessioni in un vettore per rendere più comoda la gestione del data-set.
  *
  */
