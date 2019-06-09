@@ -42,3 +42,8 @@ kwOTQwMSwxMDI1MzU3NzM0LDgzMDQ2NTY5NywzMTM5NTIxNDUs
 LTE4MTc2NTU1ODksLTE2MDIzNzcxODcsOTM5MzczMjQyLDE5Mj
 U3MTMzODJdfQ==
 -->
+
+
+## JavaDoc
+
+I file javadoc generati mediante Eclipse sono tutti contenuti nella cartella **docs**, l'api è visualizzabile in [Api Real Estate](https://superdiodo.github.io/Real-Estate/)
