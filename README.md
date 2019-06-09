@@ -31,7 +31,7 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 
 ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/Class.JPG)
 
-Per diagrammi UML più dettagliati si può fare riferimenti ai file SVG seguenti:
+Per diagrammi UML più dettagliati si può fare riferimento ai file SVG seguenti:
 - [Diagramma delle classi con Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg)
 - [Diagramma delle classi senza Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramNOSG.svg)
 - [Diagramma delle classi semplificato](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagram.svg)
