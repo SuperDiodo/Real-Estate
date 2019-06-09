@@ -34,19 +34,22 @@ public class DemanioController {
 	private final Demanio demanio;
 
 	public DemanioController() throws IOException, JSONException {
+		
+		System.out.println("\n\n|--------------------|");
+		System.out.println("|   FLUVIAL-DEALS    |");
+		System.out.println("|--------------------|\n\n");
+		
 		data = new Server("https://www.dati.gov.it/api/3/action/package_show?id=a1dee418-ddd7-40c6-ad6c-7b35aa31f61a");
 		vett = data.getDemanio().getConcessioni();
 		demanio = data.getDemanio();
+		
+		System.out.println("\n\n|--------------------|");
+		System.out.println("|  APPLICATION READY |");
+		System.out.println("|--------------------|\n\n");
 	}
 
 	@GetMapping("/")
 	public String welcome() {
-		
-		/* IDEE 
-		 * 1) link repository
-		 * 2) creatori
-		 * 3) possibili azioni*/
-		
 		
 		return "welcome";
 	}

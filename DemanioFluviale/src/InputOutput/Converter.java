@@ -34,6 +34,12 @@ public class Converter {
 		int riga = 0;
 		
 		boolean tenere;
+		
+		System.out.println("\n\n|--------------------|");
+		System.out.println("|       PARSING      |");
+		System.out.println("|--------------------|\n\n");
+		
+		System.out.println("Righe eliminate:\n");
 		while((line = reader.readLine()) != null) {
 			
 			riga++;

@@ -14,7 +14,6 @@ import org.jsoup.nodes.Document;
 
 /**
  * Con questa classe si può ricercare un url e scaricarne il contenuto
- * @author Real Estate Group
  * 
  */
 
@@ -28,7 +27,6 @@ public class Downloader {
 	 * 
 	 * @param url link che contiene il file
 	 * @param ext estensione del file
-	 * @param file_url link assoluto al file
 	 */
 	
 	public Downloader(URL url, String ext) {
@@ -64,6 +62,10 @@ public class Downloader {
 	 * @throws JSONException
 	 */
 	public void url2file(String filename) throws MalformedURLException, IOException, JSONException {
+		
+		System.out.println("\n\n|--------------------|");
+		System.out.println("|       DOWNLOAD     |");
+		System.out.println("|--------------------|\n\n");
 		
 		if(new File(filename).exists()) {System.out.println("Non serve effettuare il download, file gia' presente\n"); return;};
 		

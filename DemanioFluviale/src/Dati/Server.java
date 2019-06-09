@@ -9,7 +9,6 @@ import InputOutput.Downloader;
 /**
  * Collegamento tra i due progetti, dato l'url permette la costruzione
  * del demanio
- * @author 
  *
  */
 public class Server {
@@ -19,6 +18,7 @@ public class Server {
 	private Demanio demanio;
 
 	public Server(String url) throws IOException, JSONException {
+		
 		down = new Downloader(new URL(url), ".csv");
 		down.url2file("database.csv");
 		conv = new Converter("database.csv");

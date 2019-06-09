@@ -88,5 +88,4 @@ public class LT extends Filter{
 		
 		return trovati;
 	}
-	
 }
