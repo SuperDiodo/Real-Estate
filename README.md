@@ -203,4 +203,4 @@ Altre chiamate possibili sono quelle per mostrare i dati, in diverse forme:
     ]
 ```
 
-* Dati in formato tabella HTML: **http://localhost:8080/show.html**. Mostra l'attuale selezione di dati che si sta utilizzando, dopo l'uso di *filtering* vengono mostrati solo i risultati ottenuti. Per il ripristino della collezione basta chiamare *data*. ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/Table.JPG)
+* Dati in formato tabella HTML: **http://localhost:8080/show.html**. Mostra l'attuale selezione di dati che si sta utilizzando, dopo l'uso di *filtering* vengono mostrati solo i risultati ottenuti. Per il ripristino della collezione basta chiamare *data*. ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/table.JPG)
