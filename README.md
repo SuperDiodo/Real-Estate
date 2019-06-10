@@ -8,6 +8,9 @@ Sono presenti in repository tre cartelle:
  1. **DemanioFluviale**: contiene un progetto nel quale sono presenti le classi per il download e lo stoccaggio dei dati.
  2. **DemanioSpring**: prendendo i dati dal progetto precedenti li usa per costruire un progetto di tipo web.
  3. **External Files**: contiene i Jars delle librerie utilizzate.
+ 4. **JPGs**: contiene delle immagini utili per questo markdown.
+ 5. **SVGs**: svg dei diagrammi uml.
+ 6. **docs**: contiene tutta la documentazione javadoc.
 
 ## Jars utilizzati
 - [Jsoup](https://jsoup.org/)
