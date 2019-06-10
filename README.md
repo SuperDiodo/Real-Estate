@@ -133,7 +133,7 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
 ```
 
 I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
-*  Con la query string **http://localhost:8080/filtering?filter={"type":"and", "fields": "search","cities":%5B "roma",6935 %5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma ed una durata di concessione di 6935 giorni (l'esempio ne mostra una parte).
+*  Con la query string **http://localhost:8080/filtering?filter={"type":"and","fields":"search","cities":%5B"roma",6935%5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma ed una durata di concessione di 6935 giorni (l'esempio ne mostra una parte).
 ```json
     {
         "nome": "MAREVIVO SERVIZI",
@@ -191,7 +191,7 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
         "idcom": "H501"
     }
  ```
-* Con la query string **http://localhost:8080/filtering?filter={"type":"bt", "fields":"supwater","upper":300,"lower": 100}** cerchiamo in particolare i records che hanno come attributo **supwater** un valore compreso tra 100 e 300 (l'esempio ne mostra una parte).
+* Con la query string **http://localhost:8080/filtering?filter={"type":"bt","fields":"supwater","upper":300,"lower":100}** cerchiamo in particolare i records che hanno come attributo **supwater** un valore compreso tra 100 e 300 (l'esempio ne mostra una parte).
 ```json
  {
         "nome": "CRISTINA",
@@ -251,7 +251,7 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
 ```    
 
 
-*   Con la query string **http://localhost:8080/filtering?filter={"type":"or", "fields": "comune","cities":%5B "roma","fiumicino" %5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma o la città di Fiumicino (l'esempio ne mostra una parte).
+*   Con la query string **http://localhost:8080/filtering?filter={"type":"or","fields":"comune","cities":%5B"roma","fiumicino"%5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma o la città di Fiumicino (l'esempio ne mostra una parte).
 ``` json
  {
         "nome": "",
