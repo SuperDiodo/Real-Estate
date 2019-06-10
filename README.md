@@ -45,8 +45,17 @@ La collezione di concessioni generata può essere soggetta a calcoli statistici 
 * Statistiche di stringhe: applicabili ad attributi di tipo stringa come **nome, cognome, ragione sociale, comune, ID comune**.
 * Filtraggio: applicabile su diversi attributi in base al tipo.
 	* Greater than (**gt**): attributi numerici.
+	* Greater than Equal (**gte**): attributi numerici.
 	* Lower than (**lt**): attributi numerici.
-	* ...
+	* Lower than Equal (**lte**): attributi numerici.
+	* Between and Equal (**bt**): attributi numerici.
+	* Between (**btne**): attributi numerici (filtro aggiunto ai filtri specificati nelle specifiche del progetto).
+	* Not (**not**): attributi numerici.
+	* Only (**only**): attributi numerici(filtro aggiunto ai filtri specificati nelle specifiche del progetto).
+	* In (**in**): attributi numerici.
+	* Not In (**nin**): attributi numerici.
+	* Or (**or**): attributi di tipo stringa.
+	* And (**and**): attributi di tipo stringa.
 	
 Nel caso non sia stato possibile calcolare statistiche oppure non ci siano stati risultati di filtraggio si otterrà come risposta un errore **400: bad request**.
 
@@ -123,10 +132,205 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
 }
 ```
 
-I filtri implementati sono N: (ne metterei 3 particolari)
-*  Chiamata 1.
-*  Chiamata 2.
-*  Chiamata 3.
+I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
+*  Con la query string **http://localhost:8080/filtering?filter={"type":"and", "fields": "search","cities":%5B "roma",6935 %5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma ed una durata di concessione di 6935 giorni (l'esempio ne mostra una parte).
+```json
+    {
+        "nome": "MAREVIVO SERVIZI",
+        "cognome": "S.R.L.",
+        "comune": "ROMA",
+        "den": "LUNGOTEVERE ARNALDO DA BRESCIA - SCALO DE PINEDO",
+        "superficie": 0,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "MAREVIVO SERVIZI S.R.L.",
+        "idcom": "H501"
+    },
+    {
+        "nome": "ANGELO",
+        "cognome": "PREZIOSI AMM. UNICO",
+        "comune": "ROMA",
+        "den": "RIVA DESTRA FIUME TEVERE-A MONTE DI PONTE RISORGIMENTO LGTV OBERDAN N\ufffd2",
+        "superficie": 284,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "GILDA S.R.L.",
+        "idcom": "H501"
+    },
+    {
+        "nome": "Giuseppina (rappresentante legale)",
+        "cognome": "Sansovini",
+        "comune": "Roma",
+        "den": "GOLENA SINISTRA FIUME TEVERE - LOC. LUNGOTEVERE DANTE, 277. ZONA VALCO S. PAOLO (FG. 839 P.LLA 5, 6, 7)",
+        "superficie": 0,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "ASSOCIAZIONE SPORTIVA SPORT LIBERO",
+        "idcom": "H501"
+    },
+    {
+        "nome": "SERGIO",
+        "cognome": "SCHISANI",
+        "comune": "ROMA",
+        "den": "FIUME TEVERE SPONDA DESTRA, NEL TRATTO COMPRESO TRA PONTE RISORGIMENTO E PONTE MATTEOTTI -L.TEVERE DELLE ARMI, 44",
+        "superficie": 0,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "TiberINA srl unipersonale",
+        "idcom": "H501"
+    },
+    {
+        "nome": "FABIO E STEFANO",
+        "cognome": "MANFREDI",
+        "comune": "ROMA",
+        "den": "SPONDA DESTRA FIUME TEVERE COMUNE DI ROMA - A VALLE DI PONTE DELL'INDUSTRIA",
+        "superficie": 211,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "CARROZERIA F.LLI MANFREDI SNC",
+        "idcom": "H501"
+    }
+ ```
+* Con la query string **http://localhost:8080/filtering?filter={"type":"bt", "fields":"supwater","upper":300,"lower": 100}** cerchiamo in particolare i records che hanno come attributo **supwater** un valore compreso tra 100 e 300 (l'esempio ne mostra una parte).
+```json
+ {
+        "nome": "CRISTINA",
+        "cognome": "DI MEO",
+        "comune": "TERRACINA",
+        "den": "FIUME SISTO IN LOCALITA' FOCE SISTO, LATO SX E DX A VALLE DEL PONTE DELLA STRADA PROVINCIALE PER BADINO FOGLIO 131 PARTICELLA 57/P 67/P",
+        "superficie": 103,
+        "supwater": 258,
+        "durata": 2190,
+        "ragSoc": "DITTA INDIVIDUALE",
+        "idcom": "L120"
+    },
+    {
+        "nome": "SERGIO",
+        "cognome": "CESTRA",
+        "comune": "TERRACINA",
+        "den": "SPONDA GOLENALE DESTRA FIUME SISTO LOC. FOCE SISTO",
+        "superficie": 40,
+        "supwater": 167,
+        "durata": 6935,
+        "ragSoc": "DITTA INDIVIDUALE",
+        "idcom": "L120"
+    },
+    {
+        "nome": "MAURIZIO",
+        "cognome": "PALAZZI",
+        "comune": "ROMA",
+        "den": "SPONDA DESTRA FIUME TEVERE - A VALLE DI PONTE DUCA D'AOSTA",
+        "superficie": 0,
+        "supwater": 190,
+        "durata": 6935,
+        "ragSoc": "ASSOCIAZIONE SPORTIVA CANOA PALAZZI SRL",
+        "idcom": "H501"
+    },
+    {
+        "nome": "CLUB NAUTICO GARIGLIANO",
+        "cognome": "ASSOCIAZIONE",
+        "comune": "minturno",
+        "den": "SPONDA DESTRA FIUME GARIGLIANO A RIDOSSO DELLA S.S. PECENNONE NEL TRATTO COMPRESO TRA IL Km 1,100 ED IL Km 1,250",
+        "superficie": 92,
+        "supwater": 300,
+        "durata": 6935,
+        "ragSoc": "CLUB NAUTICO GARIGLIANO ASSOCIAZIONE",
+        "idcom": "F224"
+    },
+    {
+        "nome": "Pietro",
+        "cognome": "Rosati",
+        "comune": "Trevignano Romano",
+        "den": "I Renai",
+        "superficie": 262,
+        "supwater": 300,
+        "durata": 6935,
+        "ragSoc": "IL SOTTOVENTO S.A.S.",
+        "idcom": "L401"
+    }
+```    
+
+
+*   Con la query string **http://localhost:8080/filtering?filter={"type":"or", "fields": "comune","cities":%5B "roma","fiumicino" %5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma o la città di Fiumicino (l'esempio ne mostra una parte).
+``` json
+ {
+        "nome": "",
+        "cognome": "",
+        "comune": "FIUMICINO",
+        "den": "SPECCHIO ACQUEO SX FIUME TEVERE - VIA DELLA SCAFA 119/A",
+        "superficie": 520,
+        "supwater": 520,
+        "durata": 2190,
+        "ragSoc": "EL GALEON S.R.L.",
+        "idcom": "M297"
+    },
+    {
+        "nome": "CIRCOLO CANOTTIERI ROMA",
+        "cognome": "CIRCOLO",
+        "comune": "Roma",
+        "den": "SPONDA SX FIUME TEVERE TRATTO COMPRESO TRA PONTE DUCA D'AOSTA E PONTE RISORGIMENTO",
+        "superficie": 0,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "CIRCOLO CANOTTIERI ROMA CIRCOLO",
+        "idcom": "H501"
+    },
+    {
+        "nome": "Renzo",
+        "cognome": "Carlucci (rapp. legale)",
+        "comune": "FIUMICINO",
+        "den": "FIUME TEVERE - CANALE NAVIGABILE - A NORD DI PONTE DUE GIUGNO",
+        "superficie": 0,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "CONSTELLATION NAUTICA S.R.L.",
+        "idcom": "M297"
+    },
+    {
+        "nome": "MAURIZIO",
+        "cognome": "PALAZZI",
+        "comune": "ROMA",
+        "den": "SPONDA DESTRA FIUME TEVERE - A VALLE DI PONTE DUCA D'AOSTA",
+        "superficie": 0,
+        "supwater": 190,
+        "durata": 6935,
+        "ragSoc": "ASSOCIAZIONE SPORTIVA CANOA PALAZZI SRL",
+        "idcom": "H501"
+    },
+    {
+        "nome": "CANTIERE NAUTICO ALBULA",
+        "cognome": "SRL",
+        "comune": "Fiumicino",
+        "den": "DX CANALE NAVIGABILE A MONTE PONTE 2 GIUGNO VIA UGO BAISTROCCHI",
+        "superficie": 3190,
+        "supwater": 1550,
+        "durata": 2190,
+        "ragSoc": "CANTIERE NAUTICO ALBULA SRL",
+        "idcom": "M297"
+    },
+    {
+        "nome": "MA.GI.",
+        "cognome": "SRL",
+        "comune": "ROMA",
+        "den": "SPONDA SINISTRA F. TEVERE - LUNG.TEVERE S.PAOLO A MONTE DI PONTE MARCONI",
+        "superficie": 20350,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "MA.GI. SRL",
+        "idcom": "H501"
+    },
+    {
+        "nome": "MASSIMO",
+        "cognome": "DE BENEDICTIS",
+        "comune": "Roma",
+        "den": "SPONDA SISNISTRA FIUME TEVERE - LUNGOTEVERE THAON DI REVEL - BANCHINA TRA PONTE MILVIO E PONTE DUCA D'AOSTA",
+        "superficie": 4910,
+        "supwater": 0,
+        "durata": 0,
+        "ragSoc": "L'Antico Ponte S.r.l.",
+        "idcom": "H501"
+    }
+``` 
 
 Altre chiamate possibili sono quelle per mostrare i dati, in diverse forme: 
 
