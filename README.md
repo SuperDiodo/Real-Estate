@@ -35,12 +35,26 @@ Per diagrammi UML più dettagliati si può fare riferimento ai file SVG seguenti
 - [Diagramma delle classi senza Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramNOSG.svg)
 - [Diagramma delle classi semplificato](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagram.svg)
 
+## Filtri e attributi
+La collezione di concessioni generata può essere soggetta a calcoli statistici e filtri di vario tipo. In particolare le azioni possibili sono catalogate in base al tipo di attributo desiderato:
+
+* Statistiche numeriche: applicabili ad attributi di tipo numerico come **superficie, specchio d'acqua e durata concessione**.
+* Statistiche di stringhe: applicabili ad attributi di tipo stringa come **nome, cognome, ragione sociale, comune, ID comune**.
+* Filtraggio: applicabile su diversi attributi in base al tipo.
+	* Greater than (**gt**): attributi numerici.
+	* Lower than (**lt**): attributi numerici.
+	* ...
+	
+Nel caso non sia stato possibile calcolare statistiche oppure non ci siano stati risultati di filtraggio si otterrà come risposta un errore **400: bad request**.
+
 ## Tests
 Possono essere eseguiti vari test dell'applicazione, i più interessanti e particolari sono quelli relativi all'uso di filtri e calcolo di statistiche. In genere le chiamate sono composte così:
 
 	- Filtraggio: http://localhost:8080/filtering?"JSON FILTER".
 	- Statistiche: http://localhost:8080/stats?"ATTRIBUTO SU CUI CALCOLARE LE STATS".
 	- Statistiche su selezione: http://localhost:8080/stats?"ATTRIBUTO SU CUI CALCOLARE LE STATS" & "JSON FILTER".
+
+Le operazioni possibili sono riepilogate in una pagina html di benvenuto: **http://localhost:8080/**.
 
 Di seguito sono riportate delle chiamate specifiche con relativi risultati.
 
