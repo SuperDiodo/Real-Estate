@@ -132,6 +132,11 @@ public class DemanioController {
 			vett = bt.applica(demanio.getConcessioni(), true);
 			break;
 			
+		case "btne":
+			BT btne = new BT(filtro.getString("fields"), filtro.getInt("upper"), filtro.getInt("lower"));
+			vett = btne.applica(demanio.getConcessioni(), false);
+			break;
+				
 		case "not":
 			NOT not = new NOT(filtro.getString("fields"), filtro.getInt("value"));
 			vett = not.applica(demanio.getConcessioni(), true);
