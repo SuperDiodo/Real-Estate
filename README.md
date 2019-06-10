@@ -51,7 +51,7 @@ La collezione di concessioni generata può essere soggetta a calcoli statistici 
 	* Between and Equal (**bt**): attributi numerici.
 	* Between (**btne**): attributi numerici (filtro aggiunto ai filtri specificati nelle specifiche del progetto).
 	* Not (**not**): attributi numerici.
-	* Only (**only**): attributi numerici(filtro aggiunto ai filtri specificati nelle specifiche del progetto).
+	* Only (**only**): attributi numerici (filtro aggiunto ai filtri specificati nelle specifiche del progetto).
 	* In (**in**): attributi numerici.
 	* Not In (**nin**): attributi numerici.
 	* Or (**or**): attributi di tipo stringa.
