@@ -39,7 +39,7 @@ Per diagrammi UML più dettagliati si può fare riferimento ai file SVG seguenti
 Possono essere eseguiti vari test dell'applicazione, i più interessanti e particolari sono quelli relativi all'uso di filtri e calcolo di statistiche. In genere le chiamate sono composte così:
 
 	- Filtraggio: http://localhost:8080/filtering?"JSON FILTER".
-	- Statistiche: http://localhost:8080/filtering?"ATTRIBUTO SU CUI CALCOLARE LE STATS".
+	- Statistiche: http://localhost:8080/stats?"ATTRIBUTO SU CUI CALCOLARE LE STATS".
 	- Statistiche su selezione: http://localhost:8080/stats?"ATTRIBUTO SU CUI CALCOLARE LE STATS" & "JSON FILTER".
 
 Di seguito sono riportate delle chiamate specifiche con relativi risultati.
@@ -105,3 +105,102 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
     "h501": 1
 }
 ```
+
+I filtri implementati sono N: (ne metterei 3 particolari)
+*  Chiamata 1.
+*  Chiamata 2.
+*  Chiamata 3.
+
+Altre chiamate possibili sono quelle per mostrare i dati, in diverse forme: 
+
+* Metadati: **http://localhost:8080/metadata**.
+```json
+[
+    {
+        "alias": "nome",
+        "sourceField": "nome",
+        "type": "String"
+    },
+    {
+        "alias": "cognome",
+        "sourceField": "cognome",
+        "type": "String"
+    },
+    {
+        "alias": "RagSoc",
+        "sourceField": "Ragione Sociale",
+        "type": "String"
+    },
+    {
+        "alias": "IDCom",
+        "sourceField": "ID_Comune",
+        "type": "String"
+    },
+    {
+        "alias": "comune",
+        "sourceField": "Comune del bene oggetto di Concessione",
+        "type": "String"
+    },
+    {
+        "alias": "den",
+        "sourceField": "Denominazione_Luogo",
+        "type": "String"
+    },
+    {
+        "alias": "superficie",
+        "sourceField": "superficie",
+        "type": "Integer"
+    },
+    {
+        "alias": "supwater",
+        "sourceField": "superficie specchio acqua",
+        "type": "Integer"
+    },
+    {
+        "alias": "durata",
+        "sourceField": "Durata concessione",
+        "type": "Integer"
+    }
+]
+```
+
+* Dati in formato JSON (l'esempio ne mostra una parte): **http://localhost:8080/data**.
+```json
+    [
+    {
+        "nome": "MARCO",
+        "cognome": "CIANCHETTA",
+        "comune": "Roma",
+        "den": "DX TEVERE LOC. L.TEVERE MARESCIALLO DIAZ",
+        "superficie": 0,
+        "supwater": 0,
+        "durata": 2190,
+        "ragSoc": "MARCO CIANCHETTA",
+        "idcom": "H501"
+    },
+    {
+        "nome": "SALVATORE",
+        "cognome": "CHIODO",
+        "comune": "ROMA",
+        "den": "SPONDA DX FIUME TEVERE LOC. TOR DI QUINTO N. 64",
+        "superficie": 1025,
+        "supwater": 0,
+        "durata": 2190,
+        "ragSoc": "SALVATORE CHIODO",
+        "idcom": "H501"
+    },
+    {
+        "nome": "LAMPEDUSA",
+        "cognome": "S.R.L.",
+        "comune": "FIUMICINO (RM)",
+        "den": "ISOLA SACRA - VIA MONTE CENGIO - FIUMICINO (RM)",
+        "superficie": 0,
+        "supwater": 0,
+        "durata": 6935,
+        "ragSoc": "LAMPEDUSA S.R.L.",
+        "idcom": "M297"
+    }
+    ]
+```
+
+* Dati in formato tabella HTML: **http://localhost:8080/show.html**. Mostra l'attuale selezione di dati che si sta utilizzando, dopo l'uso di *filtering* vengono mostrati solo i risultati ottenuti. Per il ripristino della collezione basta chiamare *data*. ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/Table.JPG)
