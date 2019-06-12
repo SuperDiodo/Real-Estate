@@ -43,19 +43,21 @@ La collezione di concessioni generata può essere soggetta a calcoli statistici 
 
 * Statistiche numeriche: applicabili ad attributi di tipo numerico come **superficie, specchio d'acqua e durata concessione**.
 * Statistiche di stringhe: applicabili ad attributi di tipo stringa come **nome, cognome, ragione sociale, comune, ID comune**.
-* Filtraggio: applicabile su diversi attributi in base al tipo.
-	* Greater than (**gt**): attributi numerici.
-	* Greater than Equal (**gte**): attributi numerici.
-	* Lower than (**lt**): attributi numerici.
-	* Lower than Equal (**lte**): attributi numerici.
-	* Between and Equal (**bt**): attributi numerici.
-	* Between (**btne**): attributi numerici (filtro aggiunto ai filtri specificati nelle specifiche del progetto).
-	* Not (**not**): attributi numerici.
-	* Only (**only**): attributi numerici (filtro aggiunto ai filtri specificati nelle specifiche del progetto).
-	* In (**in**): attributi numerici.
-	* Not In (**nin**): attributi numerici.
-	* Or (**or**): attributi di tipo stringa.
-	* And (**and**): attributi di tipo stringa.
+
+|          Filtro          | Descrizione | Attributi applicabili |                  JSON del filtro (esempio)                  |
+| :----------------------: | :---------: | :-------------------: | :---------------------------------------------------------: |
+|    Greater than (gt)     |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
+| Greater than equal (gte) |             |       Numerici        |        {"type":"gte","field":"durata","lower":5000}         |
+|     Lower than (lt)      |             |       Numerici        |         {"type":"lt","field":"durata","upper":1000}         |
+|  Lower than equal (lt)   |             |       Numerici        |        {"type":"lte","field":"durata","upper":1000}         |
+|       Between (bt)       |             |       Numerici        |  {"type":"bt","fields":"supwater","upper":300,"lower":100}  |
+|  Between and equal (bt)  |             |       Numerici        | {"type":"bte","fields":"supwater","upper":300,"lower":100}  |
+|        Not (not)         |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
+|       Only (only)        |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
+|         In (in)          |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
+|      Not in  (nin)       |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
+|         Or (or)          |             |       Stringhe        |         {"type":"gt","field":"durata","lower":5000}         |
+|        And (and)         |             |       Stringhe        | {"type":"and","fields":"search","cities":%5B"roma",6935%5D} |
 	
 Nel caso non sia stato possibile calcolare statistiche oppure non ci siano stati risultati di filtraggio si otterrà come risposta un errore **400: bad request**.
 
