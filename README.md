@@ -1,7 +1,7 @@
 # ReadMe progetto concessioni fluviali
 Il progetto è stato soprannominato "Fluvial-deals", sviluppato da Alessio Saccuti e Lorenzo Del Rossi.
 
-
+---
 # Files
 Sono presenti in repository tre cartelle:
 
@@ -11,12 +11,14 @@ Sono presenti in repository tre cartelle:
  4. **JPGs**: contiene delle immagini utili per questo markdown.
  5. **SVGs**: svg dei diagrammi uml.
  6. **docs**: contiene tutta la documentazione javadoc.
+ ---
 
 ## Jars utilizzati
 - [Jsoup](https://jsoup.org/)
 - [Apache common I/O](https://commons.apache.org/proper/commons-io/) 
 - [Apache common lang](https://commons.apache.org/proper/commons-lang/)
 - [Json](https://mvnrepository.com/artifact/org.json/json)
+---
 
 ## Come eseguire il Run
 Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un CSV, grazie a chiamate di tipo REST è possibile interagire con la collezione come illustrato nella pagina di benvenuto dell'applicazione: https://"host"/. Per il corretto lancio dell'applicazione:
@@ -24,9 +26,12 @@ Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un 
 	 - Import di DemanioFluviale in DemanioSpring
 	 - Import dei Jars nei progetti
 	 - L'uso di connessione internet è consigliabile
+---
 
 ## JavaDoc
 I file javadoc generati mediante Eclipse sono tutti contenuti nella cartella **docs**, l'api è visualizzabile in [Api Real Estate](https://superdiodo.github.io/Real-Estate/)
+
+---
 
 ## Funzionamento
 ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/UseCase.JPG)
@@ -38,11 +43,8 @@ Per diagrammi UML più dettagliati si può fare riferimento ai file SVG seguenti
 - [Diagramma delle classi senza Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramNOSG.svg)
 - [Diagramma delle classi semplificato](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagram.svg)
 
-## Filtri e attributi
-La collezione di concessioni generata può essere soggetta a calcoli statistici e filtri di vario tipo. In particolare le azioni possibili sono catalogate in base al tipo di attributo desiderato:
-
-* Statistiche numeriche: applicabili ad attributi di tipo numerico come **superficie, specchio d'acqua e durata concessione**.
-* Statistiche di stringhe: applicabili ad attributi di tipo stringa come **nome, cognome, ragione sociale, comune, ID comune**.
+---
+## Filtri
 
 |          Filtro          | Descrizione | Attributi applicabili |                  JSON del filtro (esempio)                  |
 | :----------------------: | :---------: | :-------------------: | :---------------------------------------------------------: |
@@ -58,19 +60,44 @@ La collezione di concessioni generata può essere soggetta a calcoli statistici 
 |      Not in  (nin)       |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
 |         Or (or)          |             |       Stringhe        |         {"type":"gt","field":"durata","lower":5000}         |
 |        And (and)         |             |       Stringhe        | {"type":"and","fields":"search","cities":%5B"roma",6935%5D} |
-	
-Nel caso non sia stato possibile calcolare statistiche oppure non ci siano stati risultati di filtraggio si otterrà come risposta un errore **400: bad request**.
+
+---
+## Statistiche
+| Statistiche numeriche | Risultato |
+| :-------------------: | :-------: |
+|      Sommatoria       |   `int`   |
+|        Mimimo         |   `int`   |
+|        Massimo        |   `int`   |
+|         Media         | `double`  |
+|  Deviazione standard  | `double`  |
+
+```json
+Applicabile a sup, supwater, durata. Esempio chiamata: /stats?field=durata
+```
+
+
+
+| Statistiche stringhe |      Risultato       |
+| :------------------: | :------------------: |
+|      Occorrenze      | `Map<String,Object>` |
+
+```json
+Applicabile a nome, cognome, comune, RagSoc, IDCom, denominazione. Esempio chiamata: /stats?field=IDCom
+```
+
+---
+
+## HTTP responses
+|   Codice Riposta    |        Chiamate possibili        |                         Significato                          |
+| :-----------------: | :--------------------------: | :----------------------------------------------------------: |
+|     `200 - OK`      | `meta, dati,  filters, stats`  | L'operazione è andata a buon fine, il risultato prodotto è quello aspettato. |
+| `204 - NO CONTENT`  | `filtering, stats`  |       Non ci sono dati da mostrare (collezione vuota).       |
+| `400 - BAD REQUEST` | `filtering, stats` | Il filtro o il field immesso non è stato implementato oppure è incorretto. |
+
+---
 
 ## Tests
-Possono essere eseguiti vari test dell'applicazione, i più interessanti e particolari sono quelli relativi all'uso di filtri e calcolo di statistiche. In genere le chiamate sono composte così:
-
-	- Filtraggio: http://localhost:8080/filtering?"JSON FILTER".
-	- Statistiche: http://localhost:8080/stats?"ATTRIBUTO SU CUI CALCOLARE LE STATS".
-	- Statistiche su selezione: http://localhost:8080/stats?"ATTRIBUTO SU CUI CALCOLARE LE STATS" & "JSON FILTER".
-
-Le operazioni possibili sono riepilogate in una pagina html di benvenuto: **http://localhost:8080/**.
-
-Di seguito sono riportate delle chiamate specifiche con relativi risultati.
+Di seguito sono riportate delle chiamate specifiche con relativi risultati. 
 
 * Calcolo statistiche di un attributo (stringa): **http://localhost:8080/stats?field=IDCom**.
 
