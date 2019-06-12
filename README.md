@@ -70,7 +70,7 @@ Per diagrammi UML più dettagliati si può fare riferimento ai file SVG seguenti
 |        Massimo        |   `int`   |
 |         Media         | `double`  |
 |  Deviazione standard  | `double`  |
-
+|  Count                | `int`     |
 ```json
 Applicabile a sup, supwater, durata. Esempio chiamata: /stats?field=durata
 ```
@@ -131,11 +131,13 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
 
 ```json
 {
+    "Field": "durata",
     "Deviazione STD": 2856.0277852687764,
     "Massimo": 6935,
     "Media": 4727,
     "Minimo": 0,
-    "Sommatoria": 831959
+    "Sommatoria": 831959,
+    "Count": 176
 }
 ```
 
