@@ -26,6 +26,7 @@ public class IntegerStat{
 	public IntegerStat(Vector<Concessione> vett, String field) throws JSONException {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("Field", field);
 		map.put("Sommatoria", Op.sum(vett, field));
 		map.put("Minimo", Op.minimum(vett, field));
 		map.put("Massimo", Op.maximum(vett, field));
