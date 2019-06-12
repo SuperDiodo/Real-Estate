@@ -48,18 +48,18 @@ Per diagrammi UML più dettagliati si può fare riferimento ai file SVG seguenti
 
 |          Filtro          | Descrizione | Attributi applicabili |                  JSON del filtro (esempio)                  |
 | :----------------------: | :---------: | :-------------------: | :---------------------------------------------------------: |
-|    Greater than (gt)     |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
-| Greater than equal (gte) |             |       Numerici        |        {"type":"gte","field":"durata","lower":5000}         |
-|     Lower than (lt)      |             |       Numerici        |         {"type":"lt","field":"durata","upper":1000}         |
-|  Lower than equal (lt)   |             |       Numerici        |        {"type":"lte","field":"durata","upper":1000}         |
-|       Between (bt)       |             |       Numerici        |  {"type":"bt","fields":"supwater","upper":300,"lower":100}  |
-|  Between and equal (bt)  |             |       Numerici        | {"type":"bte","fields":"supwater","upper":300,"lower":100}  |
-|        Not (not)         |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
-|       Only (only)        |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
-|         In (in)          |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
-|      Not in  (nin)       |             |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
-|         Or (or)          |             |       Stringhe        |         {"type":"gt","field":"durata","lower":5000}         |
-|        And (and)         |             |       Stringhe        | {"type":"and","fields":"search","cities":%5B"roma",6935%5D} |
+|    Greater than (gt)     |  Cerca i valori del campo scelto (**field**) maggiori della soglia **lower**.           |       Numerici        |         {"type":"gt","field":"durata","lower":5000}         |
+| Greater than equal (gte) |     Cerca i valori del campo scelto (**field**) maggiori o uguali della soglia **lower**.     |       Numerici        |        {"type":"gte","field":"durata","lower":5000}         |
+|     Lower than (lt)      |   Cerca i valori del campo scelto inferiori della soglia **upper** nel campo **field**.        |       Numerici        |         {"type":"lt","field":"durata","upper":1000}         |
+|  Lower than equal (lte)   |    Cerca i valori del campo scelto (**field**) inferiori o uguali della soglia **upper**.         |       Numerici        |        {"type":"lte","field":"durata","upper":1000}         |
+|       Between (btne)      |    Cerca i valori del campo scelto (**fields**)nei valori compresi tra la soglia **lower** e **upper**.        |       Numerici        |  {"type":"btne","fields":"supwater","upper":300,"lower":100}  |
+|  Between and equal (bt)  |     Cerca i valori del campo scelto (**fields**) nei valori compresi o uguali tra la soglia **lower** e **upper**.        |       Numerici        | {"type":"bt","fields":"supwater","upper":300,"lower":100}  |
+|        Not (not)         |       Cerca i valori del campo scelto (**field**) nei valori diversi dal valore **value**.      |       Numerici        |         {"type":"not", "fields":"supwater","value": 0}         |
+|       Only (only)        |      Cerca i valori del campo scelto (**field**) uguali al valore **value**.       |       Numerici        |         {"type":"only","field":"durata","value":5000}         |
+|         In (in)          |       Cerca i valori del campo scelto (**field**) nei valori uguali ad almeno un valore nell'array  **value**.      |       Numerici        |        {"type":"in", "fields": "supwater","value":%5B 0,180 %5D}  |
+|      Not in  (nin)       |        Cerca i valori del campo scelto (**field**) diversi dai valori contenuti nell'array  **value**.     |       Numerici        |        {"type":"nin", "fields": "supwater","value":%5B 0,180 %5D}       |
+|         Or (or)          |   Cerca le stringhe del campo scelto (**fields**) uguali ad almeno un valore nell'array **cities**.          |       Stringhe        |        {"type":"or", "fields": "comune","cities":%5B "roma","fiumicino" %5D}       |
+|        And (and)         |    Cerca le stringhe del campo scelto (**fields**) uguali a tutti gli elementi dell'array **cities**. Per rendere più completo il filtro è stato inserito il field **search** tramite il quale, dato come vettore **cities** del tipo [città, numero]  il filtro cercherà le concessioni nella città richiesta e della durata richiesta (quindi una ricerca della concessione per città e durata).         |       Stringhe (nel field Stringa + numero)       | {"type":"and","fields":"search","cities":%5B"roma",6935%5D} |
 
 ---
 ## Statistiche
