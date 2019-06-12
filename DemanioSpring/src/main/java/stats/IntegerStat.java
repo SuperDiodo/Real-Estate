@@ -13,6 +13,7 @@ import Dati.Concessione;
  * 3) massimo
  * 4) media
  * 5) deviazione standard
+ * 6) count
  * 
  * La collezione risultato è del tipo:
  * Hash map tipologia stat, valore
@@ -30,6 +31,7 @@ public class IntegerStat{
 		map.put("Massimo", Op.maximum(vett, field));
 		map.put("Media", Op.avg(vett, field));
 		map.put("Deviazione STD", Op.devstd(vett, field));
+		map.put("Count", Op.count(vett));
 	
 		x = new Stats(map, true);
 	}
