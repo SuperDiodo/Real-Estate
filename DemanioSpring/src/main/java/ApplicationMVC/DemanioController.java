@@ -163,7 +163,7 @@ public class DemanioController {
 			break;
 			
 		default:
-			return new ResponseEntity<String>("Nessun filtro selezionato/esistente", HttpStatus.NOT_IMPLEMENTED);
+			return new ResponseEntity<String>("Nessun filtro selezionato/esistente", HttpStatus.BAD_REQUEST);
 		}
 
 	
@@ -202,14 +202,14 @@ public class DemanioController {
 		if (Arrays.asList("nome", "RagSoc", "IDCom", "cognome", "comune", "den").contains(field)) {
 			StringStat stat = new StringStat(demanio.getConcessioni(), field);
 			if(!stat.getStat().getStringhe().isEmpty()) return new ResponseEntity<Map<String, Object>> (stat.getStat().getStringhe(), HttpStatus.OK);
-			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NOT_FOUND);
+			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NO_CONTENT);
 			}
 		
 		/* stats per i campi di tipo numerico */
 		if (Arrays.asList("superficie","supwater","durata").contains(field)) {
 			IntegerStat stat = new IntegerStat(demanio.getConcessioni(), field);
 			if(!stat.getStat().getNumerici().isEmpty()) return new ResponseEntity<Map<String, Object>> (stat.getStat().getNumerici(), HttpStatus.OK);
-			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NOT_FOUND);
+			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NO_CONTENT);
 			}
 		}
 		
@@ -223,7 +223,7 @@ public class DemanioController {
 			Vector<Concessione> filtrati = (Vector<Concessione>) filters(filter).getBody();
 			StringStat stat = new StringStat(filtrati, field);
 			if(!stat.getStat().getStringhe().isEmpty()) return new ResponseEntity<Map<String, Object>> (stat.getStat().getStringhe(), HttpStatus.OK);
-			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NOT_FOUND);
+			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NO_CONTENT);
 			}
 		
 		/* se il campo immesso è giusto e il filtro produrrà una risposta giusta (cioè esiste) calcoliamo le stats */
@@ -233,12 +233,12 @@ public class DemanioController {
 			Vector<Concessione> filtrati = (Vector<Concessione>) filters(filter).getBody();
 			IntegerStat stat = new IntegerStat(filtrati, field);
 			if(!stat.getStat().getNumerici().isEmpty()) return new ResponseEntity<Map<String, Object>> (stat.getStat().getNumerici(), HttpStatus.OK);
-			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NOT_FOUND);
+			else return new ResponseEntity<String>("Statistiche non presenti", HttpStatus.NO_CONTENT);
 			}	
 		
 		}
 		
-		return new ResponseEntity<String> ("attributo inestistente/non corretto oppure filtro non corretto", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String> ("field inesistente", HttpStatus.BAD_REQUEST);
 	}
 
 }
