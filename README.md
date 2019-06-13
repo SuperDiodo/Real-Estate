@@ -1,6 +1,25 @@
 # ReadMe progetto concessioni fluviali
 Progetto **Fluvial-deals**, sviluppato da Alessio Saccuti e Lorenzo Del Rossi. Lo scopo di questo lavoro è quello di offrire un servizio web con cui interagire per ottenere informazioni riguardanti le concessione fluviali del Tevere. I dati utilizzati sono stati ottenuti da [dati.gov](https://www.dati.gov.it/api/3/action/package_show?id=a1dee418-ddd7-40c6-ad6c-7b35aa31f61a), scaricati e adattati per poi manipolarli secondo i principi dell'**OOP**. Le operazioni eseguibili sono quelle di visualizzazione dei dati, filtraggio e calcolo di statistiche. 
 
+
+I dati vengono convertiti da un file CSV in una collezione di dati. Essendo il file non corretto in tutte le sue righe si è optato per le seguenti regole di accettazione, con relativo messaggio di eliminazione in base al motivo:
+
+1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettati. In console viene mostrato: `La riga N del file CSV per incompletezza`. 
+2) Caso in cui manchino degli elementi necessari:
+	>L'attributo durata non ammette un numero in esso.
+	
+	>L'attributo ID comune non è alfanumerico.
+	
+	>L'attributo ID comune non è presente oppure ha un formato errato.
+	
+	>La ragione sociale o nome e cognome sono assenti. In caso di presenza di solo nome e cognome si ricostruisce la ragione   sociale come somma dei due.
+	
+	>Mancano tutti e tre gli elementi: superficie, specchio d'acqua e durata.
+   
+   In questo caso viene mostrato in console: `La riga N del file CSV per elemento mancante`. 
+   
+La durata della concessione è espressa in giorni invece che anni per una maggior precisione nei conti statistici.
+
 ---
 # Files
 Sono presenti in repository le seguenti cartelle:
