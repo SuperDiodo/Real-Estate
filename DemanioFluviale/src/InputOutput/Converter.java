@@ -53,7 +53,7 @@ public class Converter {
 			tenere = true;
 			
 			if(sections.length == 9) {
-			if(!StringUtils.isAlpha(sections[8]) && StringUtils.isAlpha(sections[3])) tenere = false; //IDCom e Durata no alfanumerici
+			if(StringUtils.isAlpha(sections[8]) && StringUtils.isAlpha(sections[3])) tenere = false; //IDCom e Durata no alfanumerici
 			if(sections[3].isEmpty() || sections[3].length() != 4) tenere = false; //no IDCom
 			if(sections[2].isEmpty() && (sections[0].isEmpty() || sections[1].isEmpty()) ) tenere = false; //serve almeno ragione sociale o nome e cognome
 			if(ParseInt(sections[6], 0) == 0 && ParseInt(sections[7], 0) == 0 && ParseDurata(sections[8]) == 0) tenere = false; //non vogliamo gli ultimi tre parametri nulli
