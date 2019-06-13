@@ -48,7 +48,7 @@ import Dati.Concessione;
 				case "cognome": ids.add(thing.getCognome()); break;
 				case"RagSoc": ids.add(thing.getRagSoc()); break;
 				case "IDCom": ids.add(thing.getIDCom()); break;
-				case "comune": ids.add(thing.getCognome()); break;
+				case "comune": ids.add(thing.getComune()); break;
 				case "den": ids.add(thing.getDen()); break;
 				default: return null;
 				}
