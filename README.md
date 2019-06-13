@@ -4,7 +4,7 @@ Progetto **Fluvial-deals**, sviluppato da Alessio Saccuti e Lorenzo Del Rossi. L
 
 I dati vengono convertiti da un file CSV in una collezione di dati. Essendo il file non corretto in tutte le sue righe si è optato per le seguenti regole di accettazione, con relativo messaggio di eliminazione in base al motivo:
 
-1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettati. In console viene mostrato: `La riga N del file CSV per incompletezza`. 
+1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettato. In console viene mostrato: `La riga N del file CSV per incompletezza`. 
 2) Caso in cui manchino degli elementi necessari:
 	>L'attributo durata è scritto in modo non parsabile, ad esempio "decennale".
 	
