@@ -6,11 +6,11 @@ I dati vengono convertiti da un file CSV in una collezione di dati. Essendo il f
 
 1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettati. In console viene mostrato: `La riga N del file CSV per incompletezza`. 
 2) Caso in cui manchino degli elementi necessari:
-	>L'attributo durata non ammette un numero in esso.
+	>L'attributo durata è scritto in modo non parsabile, ad esempio "decennale".
 	
 	>L'attributo ID comune non è alfanumerico.
 	
-	>L'attributo ID comune non è presente oppure ha un formato errato.
+	>L'attributo ID comune non è presente oppure ha una lunghezza errata.
 	
 	>La ragione sociale o nome e cognome sono assenti. In caso di presenza di solo nome e cognome si ricostruisce la ragione   sociale come somma dei due.
 	
