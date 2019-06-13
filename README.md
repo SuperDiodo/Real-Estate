@@ -1,9 +1,9 @@
 # ReadMe progetto concessioni fluviali
-Il progetto è stato soprannominato "Fluvial-deals", sviluppato da Alessio Saccuti e Lorenzo Del Rossi.
+Progetto **Fluvial-deals**, sviluppato da Alessio Saccuti e Lorenzo Del Rossi. Lo scopo di questo lavoro è quello di offrire un servizio web con cui interagire per ottenere informazioni riguardanti le concessione fluviali del Tevere. I dati utilizzati sono stati ottenuti da [dati.gov](https://www.dati.gov.it/api/3/action/package_show?id=a1dee418-ddd7-40c6-ad6c-7b35aa31f61a), scaricati e adattati per poi manipolarli secondo i principi dell'**OOP**. Le operazioni eseguibili sono quelle di visualizzazione dei dati, filtraggio e calcolo di statistiche. 
 
 ---
 # Files
-Sono presenti in repository tre cartelle:
+Sono presenti in repository le seguenti cartelle:
 
  1. **DemanioFluviale**: contiene un progetto nel quale sono presenti le classi per il download e lo stoccaggio dei dati.
  2. **DemanioSpring**: prendendo i dati dal progetto precedenti li usa per costruire un progetto di tipo web.
