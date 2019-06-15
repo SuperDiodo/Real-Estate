@@ -33,22 +33,22 @@ Sono presenti in repository le seguenti cartelle:
  ---
 
 ## Jars utilizzati
-- [Jsoup](https://jsoup.org/)
-- [Apache common I/O](https://commons.apache.org/proper/commons-io/) 
-- [Apache common lang](https://commons.apache.org/proper/commons-lang/)
-- [Json](https://mvnrepository.com/artifact/org.json/json)
+- [Jsoup](https://jsoup.org/).
+- [Apache common I/O](https://commons.apache.org/proper/commons-io/). 
+- [Apache common lang](https://commons.apache.org/proper/commons-lang/).
+- [Json](https://mvnrepository.com/artifact/org.json/json).
 ---
 
 ## Come eseguire il Run
 Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un CSV, grazie a chiamate di tipo REST è possibile interagire con la collezione come illustrato nella pagina di benvenuto dell'applicazione: https://"host"/. Per il corretto lancio dell'applicazione:
 
-	 - Import di DemanioFluviale in DemanioSpring
-	 - Import dei Jars nei progetti
-	 - L'uso di connessione internet è consigliabile
+	 - Import di DemanioFluviale in DemanioSpring.
+	 - Import dei Jars nei progetti.
+	 - L'uso di connessione internet è consigliabile.
 ---
 
 ## JavaDoc
-I file javadoc generati mediante Eclipse sono tutti contenuti nella cartella **docs**, l'api è visualizzabile in [Api Real Estate](https://superdiodo.github.io/Real-Estate/)
+I file javadoc generati mediante Eclipse sono tutti contenuti nella cartella **docs**, l'api è visualizzabile in [Api Real Estate](https://superdiodo.github.io/Real-Estate/).
 
 ---
 
@@ -58,9 +58,9 @@ I file javadoc generati mediante Eclipse sono tutti contenuti nella cartella **d
 ![](https://github.com/SuperDiodo/Real-Estate/blob/master/JPGs/Class.JPG)
 
 Per diagrammi UML più dettagliati si può fare riferimento ai file SVG seguenti:
-- [Diagramma delle classi con Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg)
-- [Diagramma delle classi senza Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramNOSG.svg)
-- [Diagramma delle classi semplificato](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagram.svg)
+- [Diagramma delle classi con Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramSG.svg).
+- [Diagramma delle classi senza Setters e Getters](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagramNOSG.svg).
+- [Diagramma delle classi semplificato](https://github.com/SuperDiodo/Real-Estate/blob/master/SVGs/ClassDiagram.svg).
 
 ---
 ## Filtri
@@ -121,7 +121,6 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
 * Calcolo statistiche di un attributo (stringa): **http://localhost:8080/stats?field=IDCom**.
 
 ```json
-[
 {
     "M297": 31,
     "L120": 19,
@@ -146,12 +145,10 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
     "L182": 1,
     "h501": 1
 }
-]
 ```
 * Calcolo statistiche di un attributo (numerico): **http://localhost:8080/stats?field=durata**.
 
 ```json
-[
 {
     "Field": "durata",
     "Deviazione STD": 2856.0277852687764,
@@ -161,13 +158,11 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
     "Sommatoria": 831959,
     "Count": 176
 }
-]
 ```
 
 * Calcolo statistiche di un attributo su una selezione: **http://localhost:8080/stats?field=IDCom&filter={"type":"gt","field":"durata","lower":5000}**.
 
 ```json
-[
 {
     "M297": 24,
     "L120": 11,
@@ -185,7 +180,6 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
     "L182": 1,
     "h501": 1
 }
-]
 ```
 
 I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
