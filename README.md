@@ -6,7 +6,7 @@ I dati vengono convertiti da un file CSV in una collezione di dati. Essendo il f
 
 1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettato. In console viene mostrato: `La riga N del file CSV per incompletezza`. 
 2) Caso in cui manchino degli elementi necessari:
-	>L'attributo durata è scritto in modo non parsabile, ad esempio "decennale".
+	>L'attributo durata non presenta un dato in formato numerico (ad esempio la stringa "6 anni" è accettabile mentre la stringa "sei anni" no).
 	
 	>L'attributo ID comune non è alfanumerico.
 	
@@ -121,6 +121,7 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
 * Calcolo statistiche di un attributo (stringa): **http://localhost:8080/stats?field=IDCom**.
 
 ```json
+[
 {
     "M297": 31,
     "L120": 19,
@@ -145,10 +146,12 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
     "L182": 1,
     "h501": 1
 }
+]
 ```
 * Calcolo statistiche di un attributo (numerico): **http://localhost:8080/stats?field=durata**.
 
 ```json
+[
 {
     "Field": "durata",
     "Deviazione STD": 2856.0277852687764,
@@ -158,11 +161,13 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
     "Sommatoria": 831959,
     "Count": 176
 }
+]
 ```
 
 * Calcolo statistiche di un attributo su una selezione: **http://localhost:8080/stats?field=IDCom&filter={"type":"gt","field":"durata","lower":5000}**.
 
 ```json
+[
 {
     "M297": 24,
     "L120": 11,
@@ -180,11 +185,13 @@ Di seguito sono riportate delle chiamate specifiche con relativi risultati.
     "L182": 1,
     "h501": 1
 }
+]
 ```
 
 I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
 *  Con la query string **http://localhost:8080/filtering?filter={"type":"and","fields":"search","cities":%5B"roma",6935%5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma ed una durata di concessione di 6935 giorni (l'esempio ne mostra una parte).
 ```json
+    [
     {
         "nome": "MAREVIVO SERVIZI",
         "cognome": "S.R.L.",
@@ -240,9 +247,11 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
         "ragSoc": "CARROZERIA F.LLI MANFREDI SNC",
         "idcom": "H501"
     }
+   ]
  ```
 * Con la query string **http://localhost:8080/filtering?filter={"type":"bt","fields":"supwater","upper":300,"lower":100}** cerchiamo in particolare i records che hanno come attributo **supwater** un valore compreso tra 100 e 300 (l'esempio ne mostra una parte).
 ```json
+ [
  {
         "nome": "CRISTINA",
         "cognome": "DI MEO",
@@ -298,11 +307,13 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
         "ragSoc": "IL SOTTOVENTO S.A.S.",
         "idcom": "L401"
     }
+   ]
 ```    
 
 
 *   Con la query string **http://localhost:8080/filtering?filter={"type":"or","fields":"comune","cities":%5B"roma","fiumicino"%5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma o la città di Fiumicino (l'esempio ne mostra una parte).
 ``` json
+ [
  {
         "nome": "",
         "cognome": "",
@@ -380,6 +391,7 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
         "ragSoc": "L'Antico Ponte S.r.l.",
         "idcom": "H501"
     }
+   ] 
 ``` 
 
 Altre chiamate possibili sono quelle per mostrare i dati, in diverse forme: 
