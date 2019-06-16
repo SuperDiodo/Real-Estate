@@ -6,18 +6,18 @@ I dati vengono convertiti da un file CSV in una collezione di dati. Essendo il f
 
 1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettato. In console viene mostrato: `La riga N del file CSV per incompletezza`. 
 2) Caso in cui manchino degli elementi necessari:
-	>L'attributo durata non presenta un dato in formato numerico (ad esempio la stringa "6 anni" è accettabile mentre la stringa "sei anni" no).
-	
-	>L'attributo ID comune non è alfanumerico.
-	
-	>L'attributo ID comune non è presente oppure ha una lunghezza errata.
-	
-	>La ragione sociale o nome e cognome sono assenti. In caso di presenza di solo nome e cognome si ricostruisce la ragione   sociale come somma dei due.
-	
-	>Mancano tutti e tre gli elementi: superficie, specchio d'acqua e durata.
-   
+>L'attributo durata non presenta un dato in formato numerico (ad esempio la stringa "6 anni" è accettabile mentre la stringa "sei anni" no).
+
+>L'attributo ID comune non è alfanumerico.
+
+>L'attributo ID comune non è presente oppure ha una lunghezza errata.
+
+>La ragione sociale o nome e cognome sono assenti. In caso di presenza di solo nome e cognome si ricostruisce la ragione   sociale come somma dei due.
+
+>Mancano tutti e tre gli elementi: superficie, specchio d'acqua e durata.
+
    In questo caso viene mostrato in console: `La riga N del file CSV per elemento mancante`. 
-   
+
 La durata della concessione è espressa in giorni invece che anni per una maggior precisione nei conti statistici.
 
 ---
@@ -30,21 +30,34 @@ Sono presenti in repository le seguenti cartelle:
  4. **JPGs**: contiene delle immagini utili per questo markdown.
  5. **SVGs**: svg dei diagrammi uml.
  6. **docs**: contiene tutta la documentazione javadoc.
- ---
+---
 
 ## Jars utilizzati
+
+Sono stati usati i seguenti Jars:
+
 - [Jsoup](https://jsoup.org/).
 - [Apache common I/O](https://commons.apache.org/proper/commons-io/). 
 - [Apache common lang](https://commons.apache.org/proper/commons-lang/).
 - [Json](https://mvnrepository.com/artifact/org.json/json).
+
+Nella cartella descritta precedentemente troverete i file già scaricati, nei progetti sono usate le dipendenze Maven.
+
 ---
 
 ## Come eseguire il Run
 Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un CSV, grazie a chiamate di tipo REST è possibile interagire con la collezione come illustrato nella pagina di benvenuto dell'applicazione: https://"host"/. Per il corretto lancio dell'applicazione:
 
-	 - Import di DemanioFluviale in DemanioSpring.
-	 - Import dei Jars nei progetti.
-	 - L'uso di connessione internet è consigliabile.
+
+
+> Eseguire il download della repository
+
+> In Eclipse andare in **File -> Open Projects from File System -> Directory** per caricare i due progetti. Ad operazione completata eclipse richiederà del tempo per scaricare tutte le dipendenze Maven. 
+
+> Nel caso in cui si avesse una versione JRE differente da quella del progetto scaricato (verranno mostrati dei warning a riguardo) bisogna cliccare con il tasto destro su un progetto e: 
+> 1) andare in **Build Path ->  Configure Build Path**
+> 2) eliminare la versione di JRE presente
+> 3) cliccare su **Add Library** per poi cliccare su **JRE System Library**, potrete scegliere la versione più aggiornata o quella del vostro sistema.
 ---
 
 ## JavaDoc
@@ -242,7 +255,7 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
         "idcom": "H501"
     }
    ]
- ```
+```
 * Con la query string **http://localhost:8080/filtering?filter={"type":"bt","fields":"supwater","upper":300,"lower":100}** cerchiamo in particolare i records che hanno come attributo **supwater** un valore compreso tra 100 e 300 (l'esempio ne mostra una parte).
 ```json
  [
@@ -302,7 +315,7 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
         "idcom": "L401"
     }
    ]
-```    
+```
 
 
 *   Con la query string **http://localhost:8080/filtering?filter={"type":"or","fields":"comune","cities":%5B"roma","fiumicino"%5D}** cerchiamo in particolare i records che hanno come attributo **comune** la città di Roma o la città di Fiumicino (l'esempio ne mostra una parte).
@@ -386,7 +399,7 @@ I filtri implementati sono 12 ed a titolo di esempio ne mostriamo qualcuno:
         "idcom": "H501"
     }
    ] 
-``` 
+```
 
 Altre chiamate possibili sono quelle per mostrare i dati, in diverse forme: 
 
