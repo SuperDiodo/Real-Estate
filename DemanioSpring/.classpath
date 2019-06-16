@@ -28,10 +28,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/apache"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/apache common lang"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/json"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jsoup"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/DemanioFluviale"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
