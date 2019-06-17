@@ -20,11 +20,4 @@
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>database.csv</name>
-			<type>1</type>
-			<location>C:/Users/aless/Documents/GitHub/Real-Estate/DemanioFluviale/database.csv</location>
-		</link>
-	</linkedResources>
 </projectDescription>

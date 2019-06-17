@@ -1,7 +1,5 @@
 package Dati;
 
-
-
 /**
  * Classe per la rappresentazione dei matadati
  *
@@ -10,7 +8,7 @@ public class metadata {
 	private String alias;
 	private String sourceField;
 	private String type;
-	
+
 	public metadata(String alias, String sourceField, String type) {
 		this.alias = alias;
 		this.sourceField = sourceField;
@@ -40,5 +38,5 @@ public class metadata {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 }
