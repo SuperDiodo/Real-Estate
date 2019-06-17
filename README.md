@@ -121,8 +121,8 @@ Applicabile a nome, cognome, comune, RagSoc, IDCom, denominazione. Esempio chiam
 |   Codice Riposta    |        Chiamate possibili        |                         Significato                          |
 | :-----------------: | :--------------------------: | :----------------------------------------------------------: |
 |     `200 - OK`      | `meta, data,  filtering, stats`  | L'operazione è andata a buon fine, il risultato prodotto è quello aspettato. |
-| `204 - NO CONTENT`  | `filtering, stats`  |       Non ci sono dati da mostrare (collezione vuota).       |
 | `400 - BAD REQUEST` | `filtering, stats` | Il filtro o il field immesso non è stato implementato oppure è incorretto. |
+| `501 - NOT IMPLEMENTED`  | `filtering, stats`  |      Field o filtro non incluso nei casi implementati.       |
 
 ---
 
