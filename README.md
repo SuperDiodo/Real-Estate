@@ -4,7 +4,7 @@ Progetto **Fluvial-deals**, sviluppato da Alessio Saccuti e Lorenzo Del Rossi. L
 
 I dati vengono convertiti da un file CSV in una collezione di dati. Essendo il file non corretto in tutte le sue righe si è optato per le seguenti regole di accettazione, con relativo messaggio di eliminazione in base al motivo:
 
-1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettato. In console viene mostrato: `La riga N del file CSV per incompletezza`. 
+1) Caso in cui la riga, suddivisa per marcatori, non abbia il numero di segmenti aspettato. In console viene mostrato: `La riga N del file CSV per lunghezza diversa da quella aspettata`. 
 2) Caso in cui manchino degli elementi necessari:
 >L'attributo durata non presenta un dato in formato numerico (ad esempio la stringa "6 anni" è accettabile mentre la stringa "sei anni" no).
 
@@ -46,13 +46,11 @@ Nella cartella descritta precedentemente troverete i file già scaricati, nei pr
 ---
 
 ## Come eseguire il Run
-Passando come String (URL) un data-set è possibile scaricarlo e salvarlo in un CSV, grazie a chiamate di tipo REST è possibile interagire con la collezione come illustrato nella pagina di benvenuto dell'applicazione: https://"host"/. Per il corretto lancio dell'applicazione:
-
-
+Come ambiente di sviluppo è stato utilizzato [Eclipse](https://www.eclipse.org/downloads/packages/release/mars/r/eclipse-ide-java-developers). Per il corretto lancio dell'applicazione:
 
 > Eseguire il download della repository
 
-> In Eclipse andare in **File -> Open Projects from File System -> Directory** per caricare i due progetti. Ad operazione completata eclipse richiederà del tempo per scaricare tutte le dipendenze Maven. 
+> In Eclipse andare in **File -> Open Projects from File System -> Directory** oppure in **File -> Import -> General -> Existing project into workspace** per caricare i due progetti. Ad operazione completata eclipse richiederà del tempo per scaricare tutte le dipendenze Maven. 
 
 > Nel caso in cui si avesse una versione JRE differente da quella del progetto scaricato (verranno mostrati dei warning a riguardo) bisogna cliccare con il tasto destro su un progetto e: 
 > 1) andare in **Build Path ->  Configure Build Path**
@@ -122,9 +120,9 @@ Applicabile a nome, cognome, comune, RagSoc, IDCom, denominazione. Esempio chiam
 ## HTTP responses
 |   Codice Riposta    |        Chiamate possibili        |                         Significato                          |
 | :-----------------: | :--------------------------: | :----------------------------------------------------------: |
-|     `200 - OK`      | `meta, dati,  filters, stats`  | L'operazione è andata a buon fine, il risultato prodotto è quello aspettato. |
-| `204 - NO CONTENT`  | `filtering, stats`  |       Non ci sono dati da mostrare (collezione vuota).       |
+|     `200 - OK`      | `meta, data,  filtering, stats`  | L'operazione è andata a buon fine, il risultato prodotto è quello aspettato. |
 | `400 - BAD REQUEST` | `filtering, stats` | Il filtro o il field immesso non è stato implementato oppure è incorretto. |
+| `501 - NOT IMPLEMENTED`  | `filtering, stats`  |      Field o filtro non incluso nei casi implementati.       |
 
 ---
 
