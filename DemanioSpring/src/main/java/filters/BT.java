@@ -1,20 +1,22 @@
 package filters;
+
 import Dati.Concessione;
 import java.util.Vector;
 
 /**
  * 
- *Classe che implementa il filtro condizionale "bt".
+ * Classe che implementa il filtro condizionale "bt".
  */
 public class BT extends Filter {
 	private int upper;
 	private int lower;
-/**
- * 
- * @param fields campo a cui si vuole applicare il filtro.
- * @param upper valore massimo di riferimento.
- * @param lower valore minimo di riferimento.
- */
+
+	/**
+	 * 
+	 * @param fields campo a cui si vuole applicare il filtro.
+	 * @param upper  valore massimo di riferimento.
+	 * @param lower  valore minimo di riferimento.
+	 */
 	public BT(String fields, int upper, int lower) {
 		super(fields);
 		setUpper(upper);
@@ -36,12 +38,15 @@ public class BT extends Filter {
 	public void setLower(int lower) {
 		this.lower = lower;
 	}
+
 	/**
-	 * @param elem elemento da controllare.
-	 * @param equal  equal = true viene applicato il filtro "bt" esclusi i valori estremi lower e upper.
-	 *               equal = false viene applicato il filtro "bt".
-	 *               La funzione tramite il flag approvato dice se l'elemento processato rispetta i criteri di ricerca (approvato = true) o meno (approvato = false).
-	 *  
+	 * @param elem  elemento da controllare.
+	 * @param equal equal = true viene applicato il filtro "bt" esclusi i valori
+	 *              estremi lower e upper. equal = false viene applicato il filtro
+	 *              "bt". La funzione tramite il flag approvato dice se l'elemento
+	 *              processato rispetta i criteri di ricerca (approvato = true) o
+	 *              meno (approvato = false).
+	 * 
 	 */
 	@Override
 	public boolean approved(Concessione elem, boolean equal) {
@@ -85,10 +90,14 @@ public class BT extends Filter {
 		else
 			return false;
 	}
+
 	/**
-	 * @param list lista di elementi che possono essere eventualmente inseriti nella lista filtrata.
-	 * @param equal flag da passare alla funzione approved.
-	 * Se il flag approvato dell'elemento processato è true l'elemento viene inserito nella lista filtrata, altrimenti viene processato l'elemento successivo.
+	 * @param list  lista di elementi che possono essere eventualmente inseriti
+	 *              nella lista filtrata.
+	 * @param equal flag da passare alla funzione approved. Se il flag approvato
+	 *              dell'elemento processato è true l'elemento viene inserito nella
+	 *              lista filtrata, altrimenti viene processato l'elemento
+	 *              successivo.
 	 */
 	@Override
 	public Vector<Concessione> applica(Vector<Concessione> list, boolean equal) {

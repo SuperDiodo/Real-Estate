@@ -5,18 +5,18 @@ import Dati.Concessione;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-
 /**
  * 
- *Classe che implementa i filtri logici "in" e "nin".
+ * Classe che implementa i filtri logici "in" e "nin".
  */
 public class IN extends Filter {
 	private JSONArray value;
-/**
- * 
- * @param fields campo a cui si vuole applicare il filtro.
- * @param value vettore contenente i valori di riferimento. 
- */
+
+	/**
+	 * 
+	 * @param fields campo a cui si vuole applicare il filtro.
+	 * @param value  vettore contenente i valori di riferimento.
+	 */
 	public IN(String fields, JSONArray value) {
 		super(fields);
 		setValue(value);
@@ -31,11 +31,12 @@ public class IN extends Filter {
 	}
 
 	/**
-	 * @param elem elemento da controllare.
-	 * @param equal  equal = true viene applicato il filtro "nin".
-	 *               equal = false viene applicato il filtro "in".
-	 *               La funzione tramite il flag approvato dice se l'elemento processato rispetta i criteri di ricerca (approvato = true) o meno (approvato = false).
-	 *  
+	 * @param elem  elemento da controllare.
+	 * @param equal equal = true viene applicato il filtro "nin". equal = false
+	 *              viene applicato il filtro "in". La funzione tramite il flag
+	 *              approvato dice se l'elemento processato rispetta i criteri di
+	 *              ricerca (approvato = true) o meno (approvato = false).
+	 * 
 	 */
 	@Override
 	public boolean approved(Concessione elem, boolean equal) throws JSONException {
@@ -132,10 +133,14 @@ public class IN extends Filter {
 		else
 			return false;
 	}
+
 	/**
-	 * @param list lista di elementi che possono essere eventualmente inseriti nella lista filtrata.
-	 * @param equal flag da passare alla funzione approved.
-	 * Se il flag approvato dell'elemento processato è true l'elemento viene inserito nella lista filtrata, altrimenti viene processato l'elemento successivo.
+	 * @param list  lista di elementi che possono essere eventualmente inseriti
+	 *              nella lista filtrata.
+	 * @param equal flag da passare alla funzione approved. Se il flag approvato
+	 *              dell'elemento processato è true l'elemento viene inserito nella
+	 *              lista filtrata, altrimenti viene processato l'elemento
+	 *              successivo.
 	 */
 	@Override
 	public Vector<Concessione> applica(Vector<Concessione> list, boolean equal) throws JSONException {

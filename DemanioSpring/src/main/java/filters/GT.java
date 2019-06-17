@@ -3,17 +3,19 @@ package filters;
 import java.util.Vector;
 
 import Dati.Concessione;
+
 /**
  * 
- *Classe che implementa i filtri condizionali "gt" e "gte".
+ * Classe che implementa i filtri condizionali "gt" e "gte".
  */
 public class GT extends Filter {
 	private int lower;
-/**
- * 
- * @param fields campo a cui si vuole applicare il filtro.
- * @param lower valore minimo di riferimento.
- */
+
+	/**
+	 * 
+	 * @param fields campo a cui si vuole applicare il filtro.
+	 * @param lower  valore minimo di riferimento.
+	 */
 	public GT(String fields, int lower) {
 		super(fields);
 		setLower(lower);
@@ -26,12 +28,14 @@ public class GT extends Filter {
 	public void setLower(int lower) {
 		this.lower = lower;
 	}
+
 	/**
-	 * @param elem elemento da controllare.
-	 * @param equal  equal = true viene applicato il filtro "gte".
-	 *               equal = false viene applicato il filtro "gt".
-	 *               La funzione tramite il flag approvato dice se l'elemento processato rispetta i criteri di ricerca (approvato = true) o meno (approvato = false).
-	 *  
+	 * @param elem  elemento da controllare.
+	 * @param equal equal = true viene applicato il filtro "gte". equal = false
+	 *              viene applicato il filtro "gt". La funzione tramite il flag
+	 *              approvato dice se l'elemento processato rispetta i criteri di
+	 *              ricerca (approvato = true) o meno (approvato = false).
+	 * 
 	 */
 	@Override
 	public boolean approved(Concessione elem, boolean equal) {
@@ -64,7 +68,8 @@ public class GT extends Filter {
 					approvato = false;
 			}
 			break;
-		default: approvato = false;
+		default:
+			approvato = false;
 			break;
 		}
 
@@ -73,8 +78,10 @@ public class GT extends Filter {
 		else
 			return false;
 	}
+
 	/**
-	 * @param list lista di elementi che possono essere eventualmente inseriti nella lista filtrata.
+	 * @param list  lista di elementi che possono essere eventualmente inseriti
+	 *              nella lista filtrata.
 	 * @param equal flag da passare alla funzione approved.
 	 */
 	@Override
